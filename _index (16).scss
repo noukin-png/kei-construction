@@ -1,0 +1,46 @@
+// フォント
+
+// font-family: Noto Sans JP;
+@mixin sans {
+  font-family: "Noto Sans JP", sans-serif;
+  font-style: normal;
+  line-height: normal;
+}
+
+// font-family: Bebas Neue;
+//使う時は @include Bebas;
+@mixin Bebas {
+  font-family: "Bebas Neue", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+
+// font-weight:;
+@mixin wt100 {
+  font-weight: 100;
+}
+@mixin wt200 {
+  font-weight: 200;
+}
+@mixin wt300 {
+  font-weight: 300;
+}
+@mixin wt400 {
+  font-weight: 400;
+}
+@mixin wt500 {
+  font-weight: 500;
+}
+@mixin wt600 {
+  font-weight: 600;
+}
+@mixin wt700 {
+  font-weight: 700;
+}
+@mixin wt800 {
+  font-weight: 800;
+}
+@mixin wt900 {
+  font-weight: 900;
+}
