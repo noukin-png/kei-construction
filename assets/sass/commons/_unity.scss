@@ -1,0 +1,74 @@
+@use "../functions" as *;
+
+/* -----------------------
+  unity
+----------------------- */
+
+// 表示・非表示
+.sp {
+  @include pc {
+    display: none !important;
+  }
+}
+
+.pc {
+  @include sp {
+    display: none !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 10%;
+}
+
+body {
+  @include sans;
+  color: $main;
+
+  &.active {
+    @include sp {
+      overflow: hidden;
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include wt400;
+}
+
+.wrapper {
+  overflow: hidden;
+}
+
+.t-just {
+  text-align-last: left; /* Chrome・Firefox用 */
+  text-align: justify; /* IE・Edge用 */
+}
+.ta-c {
+  text-align: center;
+}
+
+// Function
+.cant-click {
+  pointer-events: none;
+}
+
+// Font Family
+
+.f-palt {
+  font-feature-settings: "palt";
+}
+
+.blue-gra {
+  display: inline-block;
+  background: linear-gradient(93deg, #0050a0 5.58%, #00366d 96.38%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
