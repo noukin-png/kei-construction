@@ -1,0 +1,845 @@
+@use '../../../functions' as *;
+@use '../../J_functions' as *;
+
+/* -----------------------
+  about
+----------------------- */
+.about {
+  /* --------------------------------
+    ページ全体
+  -------------------------------- */
+  background: rgba(242, 242, 242, 1);
+
+  /* 共通：各セクションの横幅 */
+  .section-inner {
+    width: min(100% - pmin(40), pmin(1017));
+    margin: 0 auto;
+
+    @include sp {
+      width: min(100% - s(40), s(350));
+    }
+  }
+
+  /* 共通：セクション見出し */
+  .section-title {
+    &-en {
+      display: block;
+      font-size: pmin(12);
+      line-height: 1.5;
+      color: #d63b32;
+
+      @include sp {
+        font-size: s(10);
+        line-height: 1;
+      }
+    }
+
+    &-jp {
+      display: block;
+      margin-top: pmin(10);
+      font-size: pmin(51);
+      font-weight: 700;
+      line-height: 1.2;
+
+      @include sp {
+        margin-top: s(10);
+        font-size: s(28);
+        line-height: 1;
+      }
+    }
+  }
+
+  /* ==================================================
+    About Hero
+    - ページタイトル
+    - メイン画像
+    - Top Message
+  ================================================== */
+  .about-hero {
+    position: relative;
+    padding-top: pmin(163);
+    background:
+      url("../img/about-hero-bgimg.png") no-repeat right top / auto,
+      #f4f4f4;
+
+    @include sp {
+      padding-top: s(48);
+      background:
+        url("../img/about-hero-bgimg.png") no-repeat right s(18) / auto s(180),
+        #f4f4f4;
+    }
+
+    &__inner {
+      position: relative;
+      z-index: 1;
+      width: min(100% - pmin(40), pmin(1464));
+      margin: 0 auto;
+      padding-bottom: pmin(108);
+
+      @include sp {
+        width: min(100% - s(40), s(350));
+        padding-bottom: s(50);
+      }
+    }
+
+    /* ページタイトル */
+    .page-title {
+      display: flex;
+      align-items: baseline;
+      gap: pmin(30);
+      margin-left: pmin(75);
+
+      @include sp {
+        justify-content: center;
+        gap: s(10);
+        margin-left: 0;
+      }
+
+      &__en {
+        @include Bebas;
+        font-size: pmin(100);
+        font-weight: 400;
+        font-style: normal;
+        line-height: pmin(110);
+        letter-spacing: 0.06em;
+        color: #767676;
+
+        @include sp {
+          font-size: s(52);
+          line-height: s(57);
+          letter-spacing: 0.06em;
+        }
+      }
+
+      &__jp {
+        padding-bottom: 0;
+        font-size: pmin(20);
+        font-weight: 700;
+        line-height: 1.4;
+
+        @include sp {
+          font-size: s(12);
+          line-height: 1.4;
+        }
+      }
+    }
+
+    /* メイン画像 */
+    >.about-hero__inner>div:first-of-type,
+    >.about-hero__inner>div:nth-of-type(1) {
+      margin-top: pmin(34);
+
+      @include sp {
+        margin-top: s(18);
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    /* Top Message */
+    .top-message {
+      position: relative;
+      margin-top: pmin(116);
+      text-align: center;
+
+      @include sp {
+        margin-top: s(48);
+      }
+
+      /* 背景の装飾文字 */
+      &::before {
+        content: "KEI,CONSTRUCTION";
+        position: absolute;
+        top: pmin(38);
+        left: 50%;
+        transform: translateX(-50%);
+        @include Bebas;
+        font-size: pmin(199.93);
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: 0.06em;
+        color: transparent;
+        background: linear-gradient(180deg,
+            rgba(246, 229, 229, 0.2) 0%,
+            rgba(240, 65, 65, 0.2) 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        white-space: nowrap;
+        z-index: 0;
+
+        @include sp {
+          top: s(58);
+          font-size: s(64);
+          opacity: 0.75;
+        }
+      }
+
+      &__label {
+        position: relative;
+        z-index: 1;
+        font-size: pmin(16);
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 0.06em;
+        color: rgba(188, 41, 41, 1);
+
+        @include sp {
+          font-size: s(10);
+        }
+      }
+
+      &__headline {
+        position: relative;
+        z-index: 1;
+        margin-top: pmin(39);
+        font-size: pmin(36);
+        font-weight: 700;
+        line-height: 1.8;
+        letter-spacing: 0.06em;
+        color: rgba(34, 34, 34, 1);
+
+        @include sp {
+          margin-top: s(20);
+          font-size: s(22);
+          line-height: 1.7;
+          letter-spacing: 0.06em;
+        }
+      }
+
+      &__subheadline {
+        position: relative;
+        z-index: 1;
+        margin-top: pmin(20);
+        font-size: pmin(24);
+        font-weight: 700;
+        line-height: 2.4;
+        letter-spacing: 0.06em;
+        color: rgba(34, 34, 34, 1);
+
+        @include sp {
+          margin-top: s(16);
+          font-size: s(14);
+          line-height: 2;
+          letter-spacing: 0.06em;
+        }
+      }
+
+      &__text {
+        position: relative;
+        z-index: 1;
+        width: min(100%, pmin(900));
+        margin: pmin(24) auto 0;
+
+        @include sp {
+          width: 100%;
+          margin-top: s(24);
+        }
+
+        p {
+          font-size: pmin(18);
+          font-weight: 500;
+          line-height: 2.4;
+          letter-spacing: 0.06em;
+          color: rgba(34, 34, 34, 1);
+
+          @include sp {
+            font-size: s(11);
+            line-height: 2.2;
+            letter-spacing: 0.04em;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+
+  /* ==================================================
+    Corporate Philosophy
+    - 背景画像
+    - 左側タイトル
+    - 理念3項目
+  ================================================== */
+  .corporate-philosophy {
+    margin-top: pmin(98);
+
+    @include sp {
+      margin-top: s(0);
+    }
+
+    .section-inner {
+      position: relative;
+      overflow: hidden;
+      width: min(100% - pmin(40), pmin(1464));
+      min-height: pmin(530);
+      padding: pmin(112) pmin(90) pmin(90);
+      color: #fff;
+      background: url("../img/corporate-philosophy-bgimg.png") no-repeat center center / cover;
+
+      @include sp {
+        width: 100%;
+        min-height: auto;
+        padding: s(36) s(20) s(44);
+        background-position: center center;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: pmin(415);
+        height: 100%;
+        background: url("../img/corporate-philosophy-bgcover.png") no-repeat left top / 100% 100%;
+        z-index: 1;
+        pointer-events: none;
+
+        @include sp {
+          width: s(185);
+        }
+      }
+
+      &::after {
+        content: none;
+      }
+    }
+
+    &__content {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: pmin(300) minmax(0, pmin(720));
+      column-gap: pmin(58);
+      align-items: start;
+      justify-content: center;
+
+      @include sp {
+        display: block;
+      }
+    }
+
+    .section-title {
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      color: #fff;
+
+      &-en {
+        display: block;
+        background: transparent;
+        color: #fff;
+        font-size: pmin(18);
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 0.06em;
+
+        @include sp {
+          font-size: s(10);
+          line-height: 1;
+        }
+      }
+
+      &-jp {
+        display: block;
+        margin-top: pmin(29);
+        background: transparent;
+        color: #fff;
+        font-size: pmin(45);
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: 0.06em;
+
+        @include sp {
+          margin-top: s(12);
+          font-size: s(27);
+          line-height: 1;
+        }
+      }
+    }
+
+    .philosophy-list {
+      display: grid;
+      gap: pmin(38);
+      width: 100%;
+      margin: 0;
+
+      @include sp {
+        gap: s(26);
+        margin-top: s(32);
+      }
+    }
+
+    .philosophy-item {
+      display: grid;
+      grid-template-columns: pmin(108) minmax(0, 1fr);
+      align-items: start;
+      gap: pmin(30);
+      max-width: none;
+
+      @include sp {
+        grid-template-columns: 1fr;
+        gap: s(12);
+      }
+
+      &+.philosophy-item {
+        margin-top: 0;
+      }
+
+      &__title {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: pmin(108);
+        height: pmin(38);
+        padding: pmin(10) pmin(16);
+        gap: pmin(10);
+        background: rgba(188, 41, 41, 1);
+        color: #fff;
+        font-size: pmin(18);
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 0.06em;
+        white-space: nowrap;
+
+        @include sp {
+          width: s(72);
+          height: s(30);
+          padding: s(8) s(10);
+          font-size: s(13);
+        }
+      }
+
+      &__text {
+        padding-top: 0;
+        color: #fff;
+        font-size: pmin(18);
+        font-weight: 700;
+        line-height: 2.4;
+        letter-spacing: 0.06em;
+
+        @include sp {
+          font-size: s(12);
+          line-height: 2;
+          letter-spacing: 0.04em;
+        }
+      }
+    }
+  }
+
+  /* ==================================================
+    Company Information
+    - 会社概要テーブル
+    - 背景画像
+  ================================================== */
+  .company-information {
+    position: relative;
+    margin-top: pmin(132);
+    min-height: pmin(1397);
+    padding: pmin(92) 0 pmin(120);
+    overflow: hidden;
+    background: url("../img/company-infomation-bgimg.png") no-repeat center top / 100% auto;
+
+    @include sp {
+      margin-top: 0;
+      min-height: auto;
+      padding: s(50) 0 s(54);
+      background-position: center bottom;
+      background-size: auto s(420);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.1);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .section-inner {
+      position: relative;
+      z-index: 1;
+      width: min(100% - pmin(40), pmin(1000));
+      margin: 0 auto;
+
+      @include sp {
+        width: min(100% - s(40), s(350));
+      }
+    }
+
+    .section-title {
+      margin: 0;
+      padding: 0;
+      background: transparent;
+
+      &-en {
+        display: block;
+        color: rgba(188, 41, 41, 1);
+        font-size: pmin(16);
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 0.06em;
+
+        @include sp {
+          font-size: s(10);
+        }
+      }
+
+      &-jp {
+        display: block;
+        margin-top: pmin(23);
+        color: rgba(34, 34, 34, 1);
+        font-size: pmin(50);
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 0.1em;
+
+        @include sp {
+          margin-top: s(12);
+          font-size: s(28);
+          letter-spacing: 0.06em;
+        }
+      }
+    }
+
+    .company-info-table {
+      margin-top: pmin(59);
+      border-top: none;
+
+      @include sp {
+        margin-top: s(34);
+      }
+    }
+
+    .company-info-row {
+      display: grid;
+      grid-template-columns: pmin(300) pmin(700);
+      width: pmin(1000);
+      min-height: pmin(75);
+      border-bottom: 1px solid rgba(182, 182, 182, 1);
+
+      @include sp {
+        display: block;
+        width: 100%;
+        min-height: auto;
+        padding: s(18) 0;
+      }
+
+      >dt {
+        display: flex;
+        align-items: center;
+        width: pmin(300);
+        min-height: pmin(75);
+        padding: pmin(24) pmin(20);
+        color: rgba(96, 96, 96, 1);
+        font-size: pmin(16);
+        font-weight: 700;
+        line-height: 1.7;
+        letter-spacing: 0.06em;
+
+        @include sp {
+          display: block;
+          width: 100%;
+          min-height: auto;
+          padding: 0;
+          font-size: s(11);
+          line-height: 1.7;
+        }
+      }
+
+      >dd,
+      >address {
+        display: block;
+        width: pmin(700);
+        min-height: pmin(75);
+        padding: pmin(24) pmin(20);
+        color: rgba(34, 34, 34, 1);
+        font-size: pmin(16);
+        font-weight: 500;
+        line-height: 1.7;
+        letter-spacing: 0.06em;
+        font-style: normal;
+
+        @include sp {
+          width: 100%;
+          min-height: auto;
+          margin-top: s(8);
+          padding: 0;
+          font-size: s(11);
+          line-height: 1.7;
+          letter-spacing: 0.04em;
+        }
+      }
+    }
+
+    .company-offices-list {
+      display: grid;
+      gap: pmin(8);
+
+      @include sp {
+        gap: s(10);
+      }
+    }
+
+    .company-offices-item {
+      margin: 0;
+
+      &__name {
+        margin: 0;
+        color: rgba(34, 34, 34, 1);
+        font-size: pmin(16);
+        font-weight: 700;
+        line-height: 1.7;
+        letter-spacing: 0.06em;
+
+        @include sp {
+          font-size: s(11);
+          line-height: 1.7;
+        }
+      }
+
+      address {
+        display: block;
+        width: auto;
+        min-height: auto;
+        margin-top: 0;
+        padding: 0;
+        color: rgba(34, 34, 34, 1);
+        font-size: pmin(16);
+        font-weight: 500;
+        line-height: 1.7;
+        letter-spacing: 0.06em;
+        font-style: normal;
+
+        @include sp {
+          font-size: s(11);
+          line-height: 1.7;
+          letter-spacing: 0.04em;
+        }
+      }
+    }
+  }
+
+  /* ==================================================
+    Offices
+    - Googleマップ付き事業所カード
+    - 背景画像
+  ================================================== */
+  .offices {
+    position: relative;
+    overflow: hidden;
+    min-height: pmin(1172);
+    padding: pmin(103) 0 pmin(130);
+    background: url("../img/offices-bgimg.png") no-repeat right top / auto;
+
+    @include sp {
+      min-height: auto;
+      padding: s(52) 0 s(58);
+      background-position: right top;
+      background-size: auto 100%;
+    }
+
+    &::before {
+      content: none;
+    }
+
+    .section-inner {
+      position: relative;
+      z-index: 1;
+      width: min(100% - pmin(40), pmin(1000));
+      margin: 0 auto;
+
+      @include sp {
+        width: min(100% - s(40), s(350));
+      }
+    }
+
+    .section-title {
+      margin: 0;
+      padding: 0;
+      background: transparent;
+
+      &-en {
+        display: block;
+        color: rgba(188, 41, 41, 1);
+        font-size: pmin(16);
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 0.06em;
+
+        @include sp {
+          font-size: s(10);
+        }
+      }
+
+      &-jp {
+        display: block;
+        margin-top: pmin(23);
+        color: rgba(34, 34, 34, 1);
+        font-size: pmin(50);
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 0.1em;
+
+        @include sp {
+          margin-top: s(12);
+          font-size: s(28);
+          letter-spacing: 0.06em;
+        }
+      }
+    }
+
+    .office-list {
+      display: grid;
+      gap: pmin(40);
+      margin-top: pmin(60);
+
+      @include sp {
+        gap: s(38);
+        margin-top: s(34);
+      }
+    }
+
+    .office-card {
+      display: grid;
+      grid-template-columns: pmin(500) pmin(420);
+      column-gap: pmin(40);
+      align-items: start;
+
+      @include sp {
+        display: block;
+      }
+
+      &__map {
+        width: pmin(500);
+        height: pmin(260);
+        overflow: hidden;
+
+        @include sp {
+          width: 100%;
+          height: s(210);
+          margin-top: s(20);
+        }
+
+        iframe {
+          display: block;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
+      }
+
+      &__content {
+        padding-top: pmin(8);
+
+        @include sp {
+          padding-top: 0;
+        }
+      }
+
+      &__name {
+        margin: 0;
+        padding-bottom: pmin(18);
+        border-bottom: 1px solid rgba(182, 182, 182, 1);
+        color: rgba(34, 34, 34, 1);
+        font-size: pmin(24);
+        font-weight: 700;
+        line-height: 1.7;
+        letter-spacing: 0.06em;
+
+        @include sp {
+          padding-bottom: s(10);
+          font-size: s(15);
+          line-height: 1.7;
+        }
+      }
+
+      &__address,
+      &__tel,
+      &__fax {
+        margin: 0;
+        color: rgba(34, 34, 34, 1);
+        font-size: pmin(18);
+        font-weight: 500;
+        line-height: 1.7;
+        letter-spacing: 0.06em;
+        font-style: normal;
+
+        @include sp {
+          font-size: s(12);
+          line-height: 1.7;
+          letter-spacing: 0.04em;
+        }
+      }
+
+      &__address {
+        margin-top: pmin(22);
+
+        @include sp {
+          margin-top: s(14);
+        }
+      }
+
+      &__tel {
+        margin-top: pmin(8);
+
+        @include sp {
+          margin-top: s(10);
+        }
+      }
+
+      &__fax {
+        margin-top: pmin(2);
+      }
+
+      &__tel,
+      &__fax {
+        span {
+          display: inline-block;
+          margin-right: pmin(10);
+          color: rgba(188, 41, 41, 1);
+          font-size: pmin(18);
+          font-weight: 700;
+          line-height: 1.7;
+          letter-spacing: 0.06em;
+
+          @include sp {
+            margin-right: s(8);
+            font-size: s(12);
+          }
+        }
+      }
+
+      &__button {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: pmin(220);
+        height: pmin(44);
+        margin-top: pmin(24);
+        background: rgba(188, 41, 41, 1);
+        color: rgba(255, 255, 255, 1);
+        font-size: pmin(16);
+        font-weight: 500;
+        line-height: 1;
+        letter-spacing: 0.06em;
+        text-align: center;
+        text-decoration: none;
+        transition: opacity 0.3s;
+
+        @include sp {
+          width: 100%;
+          height: s(43);
+          margin-top: s(18);
+          font-size: s(12);
+        }
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
