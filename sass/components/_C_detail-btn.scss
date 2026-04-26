@@ -1,0 +1,54 @@
+@use '../functions' as *;
+
+/* -----------------------
+  C_detail-btn
+----------------------- */
+.detail-btn {
+  width: pmin(300);
+  display: block;
+
+
+  button {
+    background: $point01;
+    width: pmin(300);
+    height: pmin(60);
+    color: #fff;
+    font-size: pmin(16);
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    letter-spacing: pmin(1);
+
+    &::before {
+      content: "";
+      @include imgContain("arrow.svg");
+      position: absolute;
+      top: 50%;
+      right: 10%;
+      transform: translateY(-50%);
+      font-weight: bold;
+      @include pc{
+        width: pmin(9);
+        height: pmin(14);
+      }
+      @include sp{
+        width: s(9);
+        height: s(14);
+      }
+    }
+  }
+}
+
+@include sp{
+  .detail-btn {
+    button {
+      width: s(300);
+      height: s(60);
+      font-size: s(14);
+      margin: 0 auto;
+      display: block;
+      letter-spacing: s(1);
+
+    }
+  }
+}

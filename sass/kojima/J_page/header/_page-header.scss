@@ -1,0 +1,213 @@
+@use "../../../functions" as *;
+@use "../../J_functions" as *;
+
+/* -----------------------
+  page-header
+----------------------- */
+
+.header {
+  .pc-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: pmin(40);
+
+    img {
+      width: pmin(310);
+    }
+
+    .header-nav {
+      nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: pmin(40);
+
+        ul {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: pmin(40);
+
+          li {
+            a {
+              color: $main;
+              font-size: pmin(16);
+              position: relative;
+
+              &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: pmin(-5);
+                width: 0;
+                height: 2px;
+                background: $point01;
+                transition: 0.3s;
+              }
+            }
+
+            &:hover {
+              opacity: 0.7;
+
+              a::after {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include sp {
+    .sp-header {
+      padding: s(10) s(15);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      img {
+        width: s(185);
+      }
+
+      .humburger {
+        width: s(30);
+        height: s(20);
+        position: relative;
+        cursor: pointer;
+
+        span {
+          position: absolute;
+          width: s(30);
+          height: s(2);
+          background: $main;
+          transition: all 0.5s ease-out;
+
+          &:nth-child(1) {
+            top: 0;
+          }
+
+          &:nth-child(2) {
+            top: 50%;
+            transform: translateY(-50%);
+          }
+
+          &:nth-child(3) {
+            bottom: 0;
+          }
+        }
+      }
+
+      .humburger.active {
+        span {
+          &:nth-child(1) {
+            transform: rotate(135deg) translateY(-50%);
+            top: 50%;
+          }
+
+          &:nth-child(2) {
+            opacity: 0;
+          }
+
+          &:nth-child(3) {
+            transform: rotate(225deg) translateY(-50%);
+            top: 50%;
+          }
+        }
+      }
+    }
+
+    .sp-header-nav {
+      background: rgba(139, 143, 145, 0.94);
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+      display: none;
+      opacity: 0;
+
+      nav {
+        padding-bottom: s(50);
+
+        ul {
+          li {
+            a {
+              color: #fff;
+              font-size: s(16);
+            }
+
+            padding: s(20) s(15);
+            border-bottom: 1px solid #fff;
+          }
+        }
+      }
+    }
+
+    .sp-header-nav.active {
+      opacity: 1;
+      pointer-events: auto;
+      display: block;
+    }
+
+    .company-tel {
+      width: s(295);
+      margin: 0 auto;
+      padding: s(20) s(30);
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #fff;
+
+      p {
+        font-size: s(12);
+        text-align: center;
+        color: #fff;
+        letter-spacing: 6%;
+      }
+
+      .tel-flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        img {
+          width: s(28);
+          height: s(28);
+        }
+
+        a {
+          font-size: s(38);
+          color: #fff;
+          letter-spacing: 3%;
+          @include Bebas;
+        }
+      }
+    }
+
+    .header-logo-sp {
+      width: s(221);
+      margin: 0 auto;
+      padding: s(50) 0 s(30);
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .header-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: s(10);
+      color: #fff;
+      font-size: s(14);
+    }
+
+    .copyright {
+      color: #fff;
+      text-align: center;
+      padding: s(50) 0 s(40);
+    }
+  }
+}

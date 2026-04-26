@@ -1,0 +1,152 @@
+@use "../../../functions" as *;
+@use "../../J_functions" as *;
+
+/* -----------------------
+  page-contact
+----------------------- */
+
+.works-1 {
+  padding-bottom: pmin(100);
+  .works-item-bg {
+    background-image: url("../img/title.png");
+    background-position: top right;
+    background-size: pmin(1269);
+    background-repeat: no-repeat;
+    padding-top: pmin(100);
+  }
+
+  .works-page-btn {
+    display: flex;
+    padding: pmin(20) 0 pmin(30);
+    width: pmin(800);
+    margin: 0 auto;
+    justify-content: space-between;
+    border-top: 1px solid #c9c9c9;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: pmin(126);
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      background: #c9c9c9;
+    }
+
+    .return-text {
+      text-align: left;
+      border-bottom: 1px solid $main;
+
+      a {
+        color: $main;
+        p {
+          font-size: pmin(14);
+          padding-top: pmin(20);
+          font-weight: 500;
+
+          span {
+            font-weight: 700;
+          }
+        }
+
+        &:hover {
+          color: $point01;
+        }
+      }
+      &:hover {
+        border-bottom: 1px solid $point01;
+      }
+    }
+
+    .next-text {
+      text-align: right;
+      border-bottom: 1px solid $main;
+
+      a {
+        color: $main;
+        P {
+          font-size: pmin(14);
+          padding-top: pmin(20);
+          font-weight: 500;
+
+          span {
+            font-weight: 700;
+          }
+        }
+
+        &:hover {
+          color: $point01;
+        }
+      }
+
+      &:hover {
+        border-bottom: 1px solid $point01;
+      }
+    }
+  }
+
+  .detail-btn {
+    button {
+      display: block;
+      margin: pmin(50) auto 0;
+    }
+  }
+
+  @include sp {
+    padding-bottom: s(100);
+
+    .works-item-bg {
+      background-image: url("../img/title.png");
+      background-position: center top;
+      background-size: 100%;
+      padding-top: s(100);
+    }
+
+    .works-page-btn {
+      padding: s(10) 0 s(0);
+      width: s(340);
+
+      &::before {
+        content: "";
+        height: s(100);
+      }
+
+      .return-text {
+
+        a {
+          p {
+            font-size: s(11);
+            padding-top: s(10);
+            span {
+              font-size: s(13);
+            }
+          }
+        }
+      }
+
+      .next-text {
+
+        a {
+          P {
+            font-size: s(11);
+            padding-top: s(10);
+
+            span {
+              font-size: s(13);
+            }
+          }
+
+        }
+
+      }
+    }
+
+    .detail-btn {
+      button {
+        margin: s(70) auto 0;
+      }
+    }
+  }
+}

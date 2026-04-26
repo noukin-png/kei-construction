@@ -1,0 +1,133 @@
+@use "../../../functions" as *;
+@use "../../J_functions" as *;
+
+/* -----------------------
+  page-contact
+  
+----------------------- */
+
+.contact {
+  position: relative;
+  padding-bottom: pmin(100);
+  background: #f1f1f1;
+  background-image: url("../img/contact-left.png");
+  background-repeat: no-repeat;
+  background-position: right 0% top;
+  background-size: 60% 100%;
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  // .contact-right-img {
+  //   position: absolute;
+  //   top: 26.33%;
+  //   right: 0;
+  //   width: pmin(700);
+  //   height: 100%;
+  //   display: inline;
+  // }
+
+  .contact-contents {
+    padding: pmin(300) 0 pmin(100);
+    text-align: center;
+
+    .thanks-text {
+      font-size: pmin(20);
+      @include wt500;
+      color: $main;
+      padding-bottom: pmin(100);
+    }
+
+    .contact-precautions {
+      position: relative;
+      width: pmin(1000);
+      margin: 0 auto;
+
+      img {
+        width: 100%;
+      }
+
+      .contact-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: left;
+        width: 100%;
+        padding: pmin(40);
+        display: flex;
+        flex-direction: column;
+        gap: pmin(20);
+
+        p {
+          color: #fff;
+          font-size: pmin(16);
+          letter-spacing: 6%;
+          line-height: 2;
+          padding-left: 1em;
+          position: relative;
+
+          &::before {
+            content: "※";
+            position: absolute;
+            left: pmin(-13);
+            top: 0;
+          }
+        }
+      }
+    }
+
+    .contact-form {
+      width: pmin(800);
+      background: #f2f2f2;
+    }
+  }
+
+  @include sp {
+    background-image: none;
+
+    padding-bottom: s(50);
+    .contact-contents {
+      padding: s(150) 0 s(100);
+      text-align: center;
+
+      .thanks-text {
+        font-size: s(14);
+        @include wt500;
+        color: $main;
+        padding-bottom: s(50);
+      }
+
+      .contact-precautions {
+        width: s(335);
+
+        .contact-text {
+          padding: s(20);
+          gap: s(10);
+
+          p {
+            font-size: s(13);
+
+            &::before {
+              content: "※";
+              left: s(-8);
+              top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.contact-form {
+  width: pmin(1000);
+  margin: 0 auto;
+
+  @include sp {
+    width: s(335);
+  }
+}

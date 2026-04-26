@@ -1,0 +1,220 @@
+@use "../../../functions" as *;
+@use "../../J_functions" as *;
+
+/* -----------------------
+  page-contact
+  
+----------------------- */
+
+.works {
+  background: #f2f2f2;
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .works-coment {
+    padding: pmin(300) 0 pmin(100);
+    text-align: center;
+
+    p {
+      font-size: pmin(20);
+      @include wt500;
+    }
+  }
+
+  .works-swiper {
+    width: 100%;
+    max-width: pmin(800);
+    margin: 0 auto;
+    position: relative;
+    padding-top: pmin(50);
+  }
+
+  .works-swiper-slide {
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  .works-contents {
+    width: pmin(900);
+    margin: 0 auto;
+
+    .works-content-item {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: pmin(100);
+
+      .works-item-text {
+        text-align: center;
+        a{
+          color: $main;
+        }
+        
+        span {
+          color: $point01;
+          font-size: pmin(20);
+          letter-spacing: 6%;
+        }
+
+        p {
+          font-size: pmin(40);
+          letter-spacing: 10%;
+          @include wt700;
+        }
+      }
+    }
+
+    .works-explanation {
+      width: pmin(800);
+      margin: 0 auto;
+      text-align: left;
+      font-size: pmin(18);
+      letter-spacing: 6%;
+      @include wt500;
+    }
+
+    .swiper-pagination {
+      position: static;
+      width: pmin(120);
+      display: block;
+      margin: pmin(20) auto;
+
+      .swiper-pagination-bullet {
+        background: none;
+        border: 1px solid $point01;
+
+        &-active {
+          background: $point01;
+        }
+      }
+    }
+
+    .works-swiper-area {
+      width: pmin(900);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .works-swiper-btn-prev {
+        color: $point01;
+        border: 1px solid $point01;
+        width: pmin(40);
+        height: pmin(40);
+        background: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: pmin(15);
+        @include wt900;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        left: pmin(30);
+        transform: translateY(-50%);
+        z-index: 999;
+      }
+
+      .works-swiper-btn-next {
+        color: $point01;
+        border: 1px solid $point01;
+        width: pmin(40);
+        height: pmin(40);
+        background: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: pmin(15);
+        @include wt900;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        right: pmin(30);
+        transform: translateY(-50%);
+        z-index: 999;
+      }
+    }
+  }
+
+  @include sp{
+    .works-coment {
+    padding: s(200) 0 s(50);
+    text-align: left;
+
+    p {
+      font-size: s(14);
+      padding: 0 s(15);
+    }
+  }
+
+  .works-swiper {
+    max-width: s(315);
+    padding-top: s(20);
+  }
+
+  .works-swiper-slide {
+    img {
+      width: 100%;
+    }
+  }
+
+  .works-contents {
+    width: s(375);
+
+    .works-content-item {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: s(50);
+
+      .works-item-text {
+        span {
+          font-size: s(14);
+        }
+
+        p {
+          font-size: s(16);
+        }
+      }
+    }
+
+    .works-explanation {
+      width: s(360);
+      font-size: s(14);
+    }
+
+    .swiper-pagination {
+      width: s(120);
+      margin: s(10) auto;
+    }
+
+    .works-swiper-area {
+      width: s(375);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .works-swiper-btn-prev {
+        width: s(40);
+        height: s(40);
+        font-size: s(10);
+        top: 50%;
+        left: s(10);
+      }
+
+      .works-swiper-btn-next {
+        width: s(40);
+        height: s(40);
+        font-size: s(10);
+        right: s(10);
+      }
+    }
+  }
+  }
+}
+
