@@ -1,94 +1,17 @@
-@use "../functions" as *;
+// SVG使い方（色変更パターン）
+// @function encode($ColorCode){
+//   @return '%23' + str-slice($ColorCode,2,-1);
+// }
 
-/* -----------------------
-  C_section-title
------------------------ */
-.section-title {
-  background: #f2f2f2;
-  position: relative;
+// openアイコン
+// @function open($Color) {
+//   @return  url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 18" fill="none"><path d="M0 9H24" stroke="#{$Color}" stroke-width="2"/><path d="M0 1H24" stroke="#{$Color}" stroke-width="2"/><path d="M0 17H24" stroke="#{$Color}" stroke-width="2"/></svg>');
+// }
 
-  .text-box {
-    position: relative;
-  }
+// closeアイコン
+// @function close($Color) {
+//   @return  url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none"><path d="M1.51471 18.4854L18.4853 1.51479" stroke="#{$Color}" stroke-width="2"/><path d="M1.51471 1.51465L18.4853 18.4852" stroke="#{$Color}" stroke-width="2"/></svg>');
+// }
 
-  .sec-title-img {
-    width: 85%;
-    margin-left: auto;
-  }
-
-  .sec-mv-img {
-    width: pmin(1432);
-    height: pmin(468);
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .title-text {
-    display: flex;
-    flex-direction: row;
-    align-items: last baseline;
-    position: absolute;
-    top: 50%;
-    left: 5%;
-    transform: translateY(-50%);
-    gap: pmin(20);
-    letter-spacing: pmin(1);
-
-    h1 {
-      font-size: pmin(100);
-      color: #7b7b7b;
-      @include Bebas;
-      letter-spacing: pmin(6);
-    }
-
-    p {
-      font-size: pmin(24);
-      font-weight: bold;
-      letter-spacing: pmin(2.4);
-    }
-  }
-}
-
-@include sp{
-  .section-title {
-    position: relative;
-
-    .sec-title-img {
-      width: 100%;
-      height: s(260);
-    } 
-
-    .sec-mv-img {
-      width: s(335);
-      height: s(180);
-      top: 80%;
-    }
-
-    .title-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      display: block;
-      text-align: center;
-      align-items: last baseline;
-      gap: s(20);
-      letter-spacing: s(1);
-
-      h1 {
-        font-size: s(60);
-        color: #7b7b7b;
-        @include Bebas;
-        letter-spacing: s(3.6);
-      }
-
-      p {
-        font-size: s(16);
-        font-weight: bold;
-        letter-spacing: s(1);
-      }
-    }
-  }
-}
+// ↓CSSでは
+// background-image: open(encode('#FFF'));

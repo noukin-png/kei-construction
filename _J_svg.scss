@@ -1,39 +1,6 @@
-@use "../functions" as *;
+// 文字色
+$main: #222222;
 
-/* -----------------------
-  C_sction-sub-title
------------------------ */
-.section-sub-title {
-  display: flex;
-  flex-direction: column;
-  gap: pmin(15);
+$gra01:linear-gradient(180deg, #E87C38 0%, #BC2929 100%);
 
-  h2 {
-    font-size: pmin(50);
-    @include wt700;
-    letter-spacing: pmin(5);
-  }
-
-  p {
-    font-size: pmin(16);
-    color: $point01;
-    font-weight: bold;
-    letter-spacing: pmin(1);
-  }
-}
-
-@include sp {
-  .section-sub-title {
-    gap: s(15);
-
-    h2 {
-      font-size: s(26);
-      letter-spacing: s(2.6);
-    }
-
-    p {
-      font-size: s(10); 
-      letter-spacing: s(0.6);
-    }
-  }
-}
+$point01:#BC2929;

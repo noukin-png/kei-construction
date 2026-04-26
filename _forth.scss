@@ -1,6 +1,4 @@
-@use '../../functions' as *;
-@use '../J_functions' as *;
+// global
 
-/* -----------------------
-  C_example
------------------------ */
+@forward 'header';
+@forward 'footer';
