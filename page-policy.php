@@ -1,26 +1,4 @@
-<!doctype html>
-<html lang="ja">
-
-<head prefix="og: https://ogp.me/ns#">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="format-detection" content="email=no,telephone=no,address=no" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta property="og:locale" content="ja_JP" />
-
-  <link rel="canonical" href="URL" />
-
-  <link rel="stylesheet" href="assets/css/reset.css?ver=1.0.0" />
-  <link rel="stylesheet" href="assets/css/main.css?ver=1.0.0" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
-</head>
-
+<?php get_header(); ?>
 <body>
   
   <main class="policy">
@@ -30,7 +8,7 @@
       <div class="policy-bg"></div>
 
       <div class="breadcrumb">
-        <a href="#" class="breadcrumb-home">ホーム</a>
+        <a href="<?php echo home_url('/policy8'); ?>" class="breadcrumb-home">ホーム</a>
         <span class="breadcrumb-separator">></span>
         <span class="breadcrumb-current">個人情報保護法</span>
       </div>
@@ -42,7 +20,7 @@
       </div>
 
       <div class="policy-photo">
-        <img src="assets/img/policy1.png" alt="事業内容" />
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/policy1.png" alt="事業内容" />
       </div>
     </section>
 
@@ -119,7 +97,7 @@
 
             <div class="policy-intro-contact">
               <div class="policy-intro-form">
-                <a href="#">個人情報に関するお問合わせ</a>
+                <a href="<?php echo home_url('/policy'); ?>">個人情報に関するお問合わせ</a>
               </div>
               <div class="policy-intro-form-text">
                 <h3>株式会社ケイ建設 総務部</h3>
@@ -148,12 +126,4 @@
     </div>
 
   </main>
-
-  <script src="https://code.jquery.com/jquery-3.7.0.min.js"
-    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-  <script src="assets/js/script.js"></script>
-  <script src="assets/js/script-02.js"></script>
-  <script src="assets/js/script-03.js"></script>
-</body>
-
-</html>
+<?php get_footer(); ?>

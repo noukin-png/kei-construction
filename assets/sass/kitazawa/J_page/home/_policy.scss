@@ -1,0 +1,341 @@
+@use "../../../functions" as *;
+@use "../../J_functions" as *;
+
+/* -----------------------
+  SERVICE
+----------------------- */
+
+.policy {
+  background: #f2f2f2;
+
+
+  .policy-hero {
+    position: relative;
+
+
+
+
+    .policy-bg {
+      @include imgCover("header.png");
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 0;
+
+      @include pc {
+        width: pmin(1269);
+        height: pmin(600);
+      }
+
+      @include sp {
+        width: 100%;
+        height: s(260);
+      }
+    }
+
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      position: relative;
+      z-index: 10;
+
+      @include pc {
+        padding: pmin(20) pmin(40) 0;
+        gap: pmin(12);
+        font-size: pmin(14);
+      }
+
+      @include sp {
+        padding: s(18) s(20) 0;
+        gap: s(12);
+        font-size: s(12);
+      }
+
+      a,
+      span {
+        color: #3d3d3d;
+        font-weight: 500;
+      }
+
+      &-home {
+        @include pc {
+          border-bottom: pmin(1) solid #3d3d3d;
+        }
+
+        @include sp {
+          border-bottom: s(1) solid #3d3d3d;
+        }
+      }
+    }
+  }
+
+  .policy-hero-title {
+    display: flex;
+    align-items: baseline;
+    z-index: 2;
+    position: relative;
+
+    @include pc {
+      margin-top: pmin(160);
+      padding: 0 pmin(80);
+      gap: pmin(30);
+    }
+
+    @include sp {
+      flex-direction: column;
+      align-items: center;
+      margin-top: s(50);
+    }
+
+    h1 {
+      @include Bebas;
+      line-height: 1.1;
+      letter-spacing: 0.08em;
+      color: #7b7b7b;
+
+      @include pc {
+        font-size: pmin(100);
+      }
+
+      @include sp {
+        font-size: s(60);
+      }
+    }
+
+    p {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+
+      @include pc {
+        font-size: pmin(24);
+      }
+
+      @include sp {
+        font-size: s(16);
+      }
+    }
+  }
+
+
+  .policy-photo {
+    width: 100%;
+    position: relative;
+    z-index: 3;
+
+    @include pc {
+      padding: 0 pmin(40);
+      height: pmin(468);
+      margin-top: pmin(20);
+    }
+
+    @include sp {
+      padding: 0 s(20);
+      height: s(180);
+      margin-top: s(40);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+  }
+
+
+  .policy-intro {
+    @include imgCover("policymain1.png");
+    background-position: right 50px center;
+
+    @include pc {
+      padding: pmin(120) 0 pmin(120);
+      background-position: right center;
+      background-repeat: no-repeat;
+    }
+
+    @include sp {
+      padding: s(60) s(20) s(40);
+      background: none;
+    }
+
+    &-inner {
+      margin: 0 auto;
+
+      @include pc {
+        max-width: pmin(1000);
+      }
+    }
+
+    &-writing {
+
+      @include pc {
+        max-width: pmin(1000);
+      }
+
+      @include sp {
+        max-width: s(375);
+      }
+    }
+
+    &-writing-p {
+      font-weight: 500;
+      line-height: 2.4;
+      margin-top: 40px;
+
+      @include pc {
+        font-size: pmin(18);
+      }
+
+      @include sp {
+        font-size: s(14);
+      }
+    }
+
+    &-writing-p-span {
+      font-weight: 700;
+      border-bottom: 1px solid #000;
+    }
+
+    &-list {
+      margin: 40px 0 40px;
+
+      @include pc {
+        font-size: pmin(18);
+      }
+
+      @include sp {
+        font-size: s(14);
+      }
+    }
+
+    &-item {
+      @include pc {
+        padding: pmin(20);
+      }
+
+      @include sp {
+        padding: s(16) s(12) s(16) s(12);
+      }
+    }
+
+    &-text {
+      font-weight: 700;
+      border-bottom: 1px solid #b6b6b6;
+      line-height: 1.70em;
+      padding-bottom: 20px;
+
+      @include pc {
+        padding-left: 1.2em;
+        text-indent: -1.2em;
+      }
+    }
+
+    &-num {
+      color: #bc2929;
+    }
+
+    &-sublist {
+      font-weight: 500;
+      color: #606060;
+      list-style: disc;
+
+      @include pc {
+        padding: pmin(20);
+        padding-left: 1.3em;
+      }
+
+      @include sp {
+        padding: s(16) s(10) s(16) s(10);
+      }
+
+      li {
+        display: list-item;
+        list-style: disc;
+        list-style-position: outside;
+
+        @include pc {
+          font-size: pmin(16);
+        }
+
+        @include sp {
+          font-size: s(14);
+
+        }
+      }
+    }
+
+    &-form {
+      margin-top: 120px;
+      background: #F1DCDE;
+      padding: 20px;
+      border-bottom: 1px solid #b6b6b6;
+      cursor: pointer;
+
+
+
+      a {
+        font-size: 18px;
+        font-weight: 700;
+      }
+    }
+
+    &-form-text {
+      padding: 20px;
+      line-height: 1.70em;
+      letter-spacing: 0.05rem;
+
+      h3 {
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      p {
+        font-size: 16px;
+        color: #606060;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .policy-footer {
+    text-align: right;
+    margin-top: 40px;
+
+    &-date {
+
+      .label {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.70em;
+        color: #222222;
+      }
+
+      .value {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.70em;
+        color: #222222;
+      }
+
+    }
+
+    .policy-footer-ceo {
+
+      .label {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.70em;
+        color: #222222;
+      }
+
+      .value {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.70em;
+        color: #222222;
+      }
+    }
+  }
+
+}

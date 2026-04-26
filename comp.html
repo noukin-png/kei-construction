@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ja">
+  <head prefix="og: https://ogp.me/ns#">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ▼TELL&MAIL&ADDRESSの自動リンク機能を制御 -->
+    <meta name="format-detection" content="email=no,telephone=no,address=no" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta property="og:locale" content="ja_JP" />
+
+    <!-- ▼SEO -->
+    <link rel="”canonical”" href="”URL”" />
+    <!-- ジェネレーターURL→ https://metatags.io/ -->
+
+    <!-- ▼ファビコン -->
+    <!-- ジェネレーターURL→ https://realfavicongenerator.net/ -->
+
+    <!-- ▼クロールして欲しくない -->
+    <!-- <meta name="robots" content="noindex,nofollow"> -->
+
+    <!-- ▼テーマカラー -->
+    <!-- <meta name="theme-color" content="#e9c931"> -->
+
+    <!-- ▼CSS -->
+    <link rel="stylesheet" href="/assets/css/reset.css?ver=1.0.0" />
+    <link rel="stylesheet" href="/assets/css/main.css?ver=1.0.0" />
+
+    <!-- ▼フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <style>
+      .component--wapper {
+        display: flex;
+        flex-direction: column;
+        gap: 120px;
+        padding: 100px 0;
+        background-color: #000000;
+        overflow: hidden;
+      }
+
+      .component--item {
+        border: 1px solid #000000;
+        padding: 50px 0;
+        background-color: #bbbbbb;
+      }
+
+      .component--title {
+        font-size: 20px;
+        font-weight: bold;
+        padding: 30px;
+        border-bottom: 1px dotted #000000;
+        margin: 0 0 30px 40px;
+        width: fit-content;
+      }
+
+      .component--main {
+        padding: 60px 0px;
+        border: 1px solid #000000;
+        background-color: rgb(210, 210, 210);
+      }
+    </style>
+
+    <div class="component--wapper">
+      <!-- サービスカード -->
+      <div class="component--item">
+        <div class="component--title">service-card</div>
+        <div class="component--main">
+
+          <!-- component -->
+          <div class="service-card">
+            <div class="service-card-line"></div>
+            <div class="service-card-content">
+              <div class="top-TX">
+                <p class="number">01</p>
+                <p class="title">土木工事</p>
+              </div>
+              <p class="category">
+                河川工事 ／ トンネル工事 ／ 橋梁工事 ／ 土地造成工事 ／
+                下水道管埋設工事 ／ 治山工事
+              </p>
+
+              <div class="img-wrap">
+                <img src="../assets/img/SERVICEmain-1.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <!-- component end -->
+           
+        </div>
+      </div>
+
+      <!-- 詳しく見るボタン -->
+      <div class="component--item">
+        <div class="component--title">detail-btn</div>
+        <div class="component--main">
+          <!-- component -->
+          <a href="#" class="detail-btn"><button>詳しく見る</button></a>
+          <!-- component end -->
+        </div>
+      </div>
+    </div>
+
+    <!-- タイトル -->
+    <div class="component--item">
+      <div class="component--title">title</div>
+      <div class="component--main">
+        <!-- component -->
+        <div class="section-title">
+          <div class="text-box">
+            <img class="sec-title-img pc" src="assets/img/title.png" alt="" />
+            <img
+              class="sec-title-img sp"
+              src="assets/img/title-sp.png"
+              alt=""
+            />
+            <div class="title-text">
+              <h1>ABOUT</h1>
+              <p>会社概要</p>
+            </div>
+          </div>
+          <img class="sec-mv-img" src="assets/img/mv3.png" alt="" />
+        </div>
+        <!-- component end -->
+      </div>
+    </div>
+
+    <!-- サブタイトル -->
+    <div class="component--item">
+      <div class="component--title">sub-title</div>
+      <div class="component--main">
+        <!-- component -->
+        <div class="section-sub-title">
+          <p>/ Company Information</p>
+          <h2>会社概要</h2>
+        </div>
+        <!-- component end -->
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/script.js"></script>
+    <script src="js/script-02.js"></script>
+    <script src="js/script-03.js"></script>
+  </body>
+</html>

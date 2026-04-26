@@ -1,0 +1,143 @@
+@use "../../functions" as *;
+@use "../J_functions" as *;
+
+/* -----------------------
+  C_service-card
+----------------------- */
+
+.service-card {
+  @include pc {
+    width: pmin(696);
+  }
+
+  // スマホの幅は親要素のpaddingで調整想定
+
+  &-line {
+    position: relative;
+    width: 100%;
+    border-radius: 999px;
+    background: #b1b1b1;
+
+    @include pc {
+      height: pmin(2);
+    }
+
+    @include sp {
+      height: s(2);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      border-radius: 999px;
+      background: $gra01;
+      z-index: 1;
+
+      @include pc {
+        width: pmin(69);
+        height: pmin(2);
+      }
+
+      @include sp {
+        width: s(69);
+        height: s(2);
+      }
+    }
+  }
+
+  &-content {
+    @include pc {
+      padding-top: pmin(20);
+    }
+
+    @include sp {
+      padding-top: s(20);
+    }
+
+    .top-TX {
+      display: flex;
+
+      @include pc {
+        gap: pmin(20);
+      }
+
+      @include sp {
+        gap: s(18);
+      }
+
+      .number {
+        @include Bebas;
+        background: $gra01;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        @include pc {
+          font-size: pmin(46);
+        }
+
+        @include sp {
+          font-size: s(36);
+        }
+      }
+
+      .title {
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        position: relative;
+
+        @include pc {
+          font-size: pmin(30);
+          top: pmin(4);
+        }
+
+        @include sp {
+          font-size: s(24);
+          top: s(4);
+        }
+      }
+    }
+
+    .category {
+      letter-spacing: 0.08em;
+
+      @include pc {
+        margin-top: pmin(20);
+        font-size: pmin(16);
+        height: pmin(52);   //追加
+      }
+
+      @include sp {
+        margin-top: s(15);
+        font-size: s(12);
+      }
+    }
+
+    .service-card p {
+      margin: 0;
+    }
+
+    .img-wrap {
+      width: 100%;
+
+      @include pc {
+        margin-top: pmin(20);
+        height: pmin(300);
+      }
+
+      @include sp {
+        margin-top: s(15);
+        height: s(200);
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
