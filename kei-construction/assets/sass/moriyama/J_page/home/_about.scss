@@ -5,12 +5,8 @@
   about
 ----------------------- */
 .about {
-  /* --------------------------------
-    ページ全体
-  -------------------------------- */
   background: rgba(242, 242, 242, 1);
 
-  /* 共通：各セクションの横幅 */
   .section-inner {
     width: min(100% - pmin(40), pmin(1017));
     margin: 0 auto;
@@ -20,7 +16,6 @@
     }
   }
 
-  /* 共通：セクション見出し */
   .section-title {
     &-en {
       display: block;
@@ -51,48 +46,50 @@
 
   /* ==================================================
     About Hero
-    - ページタイトル
-    - メイン画像
-    - Top Message
   ================================================== */
   .about-hero {
     position: relative;
-    padding-top: pmin(163);
+    padding-top: pmin(194);
     background:
-      url("../img/about-hero-bgimg.png") no-repeat right top / auto,
+      url("../img/about-hero-bgimg.png") no-repeat right top / min(83.93vw, pmin(1269)) auto,
       #f4f4f4;
 
     @include sp {
-      padding-top: s(48);
+      padding-top: s(80);
       background:
-        url("../img/about-hero-bgimg.png") no-repeat right s(18) / auto s(180),
+        url("../img/about-hero-sp.png") no-repeat center top / 100% s(260),
         #f4f4f4;
     }
 
     &__inner {
       position: relative;
       z-index: 1;
-      width: min(100% - pmin(40), pmin(1464));
+      width: 100%;
       margin: 0 auto;
-      padding-bottom: pmin(108);
+      padding-bottom: pmin(120);
 
       @include sp {
-        width: min(100% - s(40), s(350));
-        padding-bottom: s(50);
+        width: 100%;
+        padding-bottom: s(80);
       }
     }
 
-    /* ページタイトル */
     .page-title {
       display: flex;
-      align-items: baseline;
+      align-items: center;
       gap: pmin(30);
-      margin-left: pmin(75);
+      width: pmin(441);
+      height: pmin(110);
+      margin-left: pmin(80);
 
       @include sp {
-        justify-content: center;
-        gap: s(10);
-        margin-left: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: s(7);
+        width: auto;
+        height: s(83);
+        margin: 0 auto;
       }
 
       &__en {
@@ -103,60 +100,84 @@
         line-height: pmin(110);
         letter-spacing: 0.06em;
         color: #767676;
+        white-space: nowrap;
 
         @include sp {
-          font-size: s(52);
-          line-height: s(57);
+          font-size: s(60);
+          line-height: 1;
           letter-spacing: 0.06em;
         }
       }
 
       &__jp {
-        padding-bottom: 0;
+        display: flex;
+        align-items: center;
+        width: pmin(111);
+        height: pmin(29);
+        padding-left: pmin(7);
         font-size: pmin(20);
         font-weight: 700;
         line-height: 1.4;
+        white-space: nowrap;
 
         @include sp {
-          font-size: s(12);
-          line-height: 1.4;
+          display: block;
+          width: auto;
+          height: auto;
+          padding-left: 0;
+          font-size: s(16);
+          font-weight: 500;
+          line-height: 1;
+          letter-spacing: 0.06em;
+          text-align: center;
         }
       }
     }
 
-    /* メイン画像 */
     >.about-hero__inner>div:first-of-type,
     >.about-hero__inner>div:nth-of-type(1) {
-      margin-top: pmin(34);
+      width: min(calc(100% - pmin(80)), pmin(1432));
+      height: pmin(468);
+      margin: pmin(50) auto 0;
 
       @include sp {
-        margin-top: s(18);
+        width: s(335);
+        height: s(180);
+        margin: s(40) auto 0;
       }
 
       img {
         display: block;
         width: 100%;
-        height: auto;
+        height: 100%;
+        object-fit: cover;
+
+        @include sp {
+          content: url("../img/about-top-sp.png");
+        }
       }
     }
 
-    /* Top Message */
     .top-message {
       position: relative;
-      margin-top: pmin(116);
+      width: 100%;
+      margin-top: pmin(120);
       text-align: center;
 
       @include sp {
-        margin-top: s(48);
+        width: s(335);
+        min-height: s(561);
+        margin: s(60) auto 0;
+        padding-top: s(25);
       }
 
-      /* 背景の装飾文字 */
       &::before {
         content: "KEI,CONSTRUCTION";
         position: absolute;
-        top: pmin(38);
+        top: pmin(50);
         left: 50%;
         transform: translateX(-50%);
+        width: min(calc(100% - pmin(196)), pmin(1315));
         @include Bebas;
         font-size: pmin(199.93);
         font-weight: 400;
@@ -172,71 +193,98 @@
         z-index: 0;
 
         @include sp {
-          top: s(58);
-          font-size: s(64);
-          opacity: 0.75;
+          content: "KEI\A CONSTR\A UCTION";
+          top: 0;
+          width: s(282);
+          font-size: s(94.5);
+          line-height: 1;
+          letter-spacing: 0.06em;
+          text-align: center;
+          white-space: pre-line;
+          background: linear-gradient(180deg,
+              rgba(240, 65, 65, 0.2) 0%,
+              rgba(246, 229, 229, 0.2) 100%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          opacity: 1;
         }
       }
 
       &__label {
         position: relative;
         z-index: 1;
+        width: fit-content;
+        height: pmin(16);
+        margin: 0 auto;
         font-size: pmin(16);
         font-weight: 700;
         line-height: 1;
         letter-spacing: 0.06em;
         color: rgba(188, 41, 41, 1);
+        white-space: nowrap;
 
         @include sp {
-          font-size: s(10);
+          height: s(16);
+          font-size: s(16);
         }
       }
 
       &__headline {
         position: relative;
         z-index: 1;
-        margin-top: pmin(39);
+        width: fit-content;
+        max-width: calc(100% - pmin(80));
+        margin: pmin(60) auto 0;
         font-size: pmin(36);
         font-weight: 700;
         line-height: 1.8;
         letter-spacing: 0.06em;
         color: rgba(34, 34, 34, 1);
+        white-space: nowrap;
 
         @include sp {
-          margin-top: s(20);
-          font-size: s(22);
-          line-height: 1.7;
-          letter-spacing: 0.06em;
+          width: s(232);
+          max-width: none;
+          margin: s(40) auto 0;
+          font-size: s(20);
+          line-height: 1.8;
+          text-align: center;
+          white-space: normal;
         }
       }
 
       &__subheadline {
         position: relative;
         z-index: 1;
-        margin-top: pmin(20);
+        width: fit-content;
+        max-width: calc(100% - pmin(80));
+        margin: pmin(10) auto 0;
         font-size: pmin(24);
         font-weight: 700;
         line-height: 2.4;
         letter-spacing: 0.06em;
         color: rgba(34, 34, 34, 1);
+        white-space: nowrap;
 
         @include sp {
-          margin-top: s(16);
-          font-size: s(14);
-          line-height: 2;
-          letter-spacing: 0.06em;
+          width: s(302);
+          max-width: none;
+          margin: s(20) auto 0;
+          font-size: s(16);
+          line-height: 2.4;
+          text-align: center;
         }
       }
 
       &__text {
         position: relative;
         z-index: 1;
-        width: min(100%, pmin(900));
-        margin: pmin(24) auto 0;
+        width: min(calc(100% - pmin(80)), pmin(778));
+        margin: pmin(40) auto 0;
 
         @include sp {
-          width: 100%;
-          margin-top: s(24);
+          width: s(335);
+          margin: s(40) auto 0;
         }
 
         p {
@@ -245,12 +293,32 @@
           line-height: 2.4;
           letter-spacing: 0.06em;
           color: rgba(34, 34, 34, 1);
+          text-align: center;
+
+          /* PC：br以外では改行させない */
+          white-space: nowrap;
 
           @include sp {
-            font-size: s(11);
-            line-height: 2.2;
-            letter-spacing: 0.04em;
-            text-align: left;
+            font-size: s(14);
+            line-height: 2.4;
+            letter-spacing: 0.06em;
+
+            /* SP：通常の自動改行は許可 */
+            white-space: normal;
+          }
+        }
+
+        br {
+          display: inline;
+
+          @include sp {
+            display: inline;
+          }
+        }
+
+        br:nth-of-type(2) {
+          @include sp {
+            display: none;
           }
         }
       }
@@ -259,31 +327,30 @@
 
   /* ==================================================
     Corporate Philosophy
-    - 背景画像
-    - 左側タイトル
-    - 理念3項目
   ================================================== */
   .corporate-philosophy {
-    margin-top: pmin(98);
+    margin-top: 0;
 
     @include sp {
-      margin-top: s(0);
+      margin-top: 0;
+      min-height: s(701);
     }
 
     .section-inner {
       position: relative;
       overflow: hidden;
-      width: min(100% - pmin(40), pmin(1464));
-      min-height: pmin(530);
-      padding: pmin(112) pmin(90) pmin(90);
+      width: min(calc(100% - pmin(80)), pmin(1432));
+      min-height: pmin(601);
+      margin: 0 auto;
+      padding: pmin(120) pmin(216) pmin(100);
       color: #fff;
       background: url("../img/corporate-philosophy-bgimg.png") no-repeat center center / cover;
 
       @include sp {
         width: 100%;
-        min-height: auto;
-        padding: s(36) s(20) s(44);
-        background-position: center center;
+        min-height: s(701);
+        padding: s(80) s(20) s(80);
+        background: url("../img/corporate-philosophy-bgimg.png") no-repeat center center / cover;
       }
 
       &::before {
@@ -292,12 +359,12 @@
         inset: 0 auto 0 0;
         width: pmin(415);
         height: 100%;
-        background: url("../img/corporate-philosophy-bgcover.png") no-repeat left top / 100% 100%;
+        background: url("../img/corporate-philosophy-bgcover.png") no-repeat left top / auto 100%;
         z-index: 1;
         pointer-events: none;
 
         @include sp {
-          width: s(185);
+          content: none;
         }
       }
 
@@ -310,64 +377,89 @@
       position: relative;
       z-index: 2;
       display: grid;
-      grid-template-columns: pmin(300) minmax(0, pmin(720));
-      column-gap: pmin(58);
+      grid-template-columns: pmin(215) pmin(680);
+      column-gap: pmin(105);
       align-items: start;
-      justify-content: center;
+      width: 100%;
+      margin: 0 auto;
 
       @include sp {
         display: block;
+        width: 100%;
       }
     }
 
     .section-title {
+      display: flex;
+      flex-direction: column;
+      gap: pmin(30);
+      width: pmin(215);
+      height: pmin(106);
       margin: 0;
       padding: 0;
       background: transparent;
       color: #fff;
 
+      @include sp {
+        gap: s(15.59);
+        width: s(155);
+        height: auto;
+      }
+
       &-en {
         display: block;
+        width: pmin(207);
+        height: pmin(16);
         background: transparent;
         color: #fff;
-        font-size: pmin(18);
+        font-size: pmin(16);
         font-weight: 700;
         line-height: 1;
         letter-spacing: 0.06em;
+        white-space: nowrap;
 
         @include sp {
-          font-size: s(10);
-          line-height: 1;
+          width: s(156);
+          height: s(16);
+          font-size: s(11.69);
+
+          &::first-letter {
+            font-size: s(15.59);
+          }
         }
       }
 
       &-jp {
         display: block;
-        margin-top: pmin(29);
+        width: pmin(215);
+        height: pmin(60);
+        margin-top: 0;
         background: transparent;
         color: #fff;
-        font-size: pmin(45);
+        font-size: pmin(50);
         font-weight: 700;
-        line-height: 1.2;
-        letter-spacing: 0.06em;
+        line-height: 1;
+        letter-spacing: 0.1em;
+        white-space: nowrap;
 
         @include sp {
-          margin-top: s(12);
-          font-size: s(27);
-          line-height: 1;
+          width: s(126);
+          height: s(35);
+          font-size: s(29.23);
         }
       }
     }
 
     .philosophy-list {
       display: grid;
-      gap: pmin(38);
-      width: 100%;
+      gap: pmin(40);
+      width: pmin(680);
       margin: 0;
 
       @include sp {
-        gap: s(26);
-        margin-top: s(32);
+        gap: s(30);
+        width: s(326.4);
+        margin: s(40) 0 0;
       }
     }
 
@@ -376,15 +468,27 @@
       grid-template-columns: pmin(108) minmax(0, 1fr);
       align-items: start;
       gap: pmin(30);
+      width: pmin(680);
       max-width: none;
 
       @include sp {
-        grid-template-columns: 1fr;
-        gap: s(12);
+        display: block;
+        width: 100%;
       }
 
       &+.philosophy-item {
         margin-top: 0;
+      }
+
+      &:nth-child(2),
+      &:nth-child(3) {
+        .philosophy-item__title {
+          margin-top: pmin(24);
+
+          @include sp {
+            margin-top: 0;
+          }
+        }
       }
 
       &__title {
@@ -404,9 +508,10 @@
         white-space: nowrap;
 
         @include sp {
-          width: s(72);
-          height: s(30);
-          padding: s(8) s(10);
+          width: auto;
+          min-width: s(88.66);
+          height: s(33.49);
+          padding: s(9.74) s(15.59);
           font-size: s(13);
         }
       }
@@ -420,9 +525,19 @@
         letter-spacing: 0.06em;
 
         @include sp {
-          font-size: s(12);
+          width: s(326.4);
+          margin-top: s(16);
+          font-size: s(14);
           line-height: 2;
           letter-spacing: 0.04em;
+          word-break: normal;
+          overflow-wrap: break-word;
+        }
+
+        br {
+          @include sp {
+            display: none;
+          }
         }
       }
     }
@@ -430,23 +545,24 @@
 
   /* ==================================================
     Company Information
-    - 会社概要テーブル
-    - 背景画像
   ================================================== */
   .company-information {
     position: relative;
-    margin-top: pmin(132);
-    min-height: pmin(1397);
-    padding: pmin(92) 0 pmin(120);
+    margin-top: pmin(40);
+    min-height: pmin(1717);
+    padding: pmin(160) 0 pmin(160);
     overflow: hidden;
-    background: url("../img/company-infomation-bgimg.png") no-repeat center top / 100% auto;
+    background: url("../img/company-infomation-bgimg.png") no-repeat center top / cover;
 
     @include sp {
       margin-top: 0;
-      min-height: auto;
-      padding: s(50) 0 s(54);
-      background-position: center bottom;
-      background-size: auto s(420);
+      min-height: s(1549);
+      padding: s(80) 0;
+      background: url("../img/company-infomation-bgimg.png") no-repeat center top / cover;
+    }
+
+    address {
+      font-style: normal;
     }
 
     &::before {
@@ -461,55 +577,78 @@
     .section-inner {
       position: relative;
       z-index: 1;
-      width: min(100% - pmin(40), pmin(1000));
+      width: min(calc(100% - pmin(80)), pmin(1000));
       margin: 0 auto;
 
       @include sp {
-        width: min(100% - s(40), s(350));
+        width: s(335);
       }
     }
 
     .section-title {
+      display: flex;
+      flex-direction: column;
+      gap: pmin(30);
+      width: pmin(215);
+      height: pmin(106);
       margin: 0;
       padding: 0;
       background: transparent;
 
+      @include sp {
+        gap: s(16);
+        width: s(137);
+        height: s(57);
+      }
+
       &-en {
         display: block;
+        width: pmin(200);
+        height: pmin(16);
         color: rgba(188, 41, 41, 1);
         font-size: pmin(16);
         font-weight: 700;
         line-height: 1;
         letter-spacing: 0.06em;
+        white-space: nowrap;
 
         @include sp {
+          width: s(137);
+          height: s(10);
           font-size: s(10);
         }
       }
 
       &-jp {
         display: block;
-        margin-top: pmin(23);
+        width: pmin(215);
+        height: pmin(60);
+        margin-top: 0;
         color: rgba(34, 34, 34, 1);
         font-size: pmin(50);
         font-weight: 700;
         line-height: 1;
         letter-spacing: 0.1em;
+        white-space: nowrap;
 
         @include sp {
-          margin-top: s(12);
-          font-size: s(28);
-          letter-spacing: 0.06em;
+          width: s(112);
+          height: s(31);
+          font-size: s(26);
         }
       }
     }
 
     .company-info-table {
-      margin-top: pmin(59);
+      width: pmin(1000);
+      min-height: pmin(1211);
+      margin-top: pmin(80);
       border-top: none;
 
       @include sp {
-        margin-top: s(34);
+        width: s(335);
+        min-height: s(1292);
+        margin-top: s(40);
       }
     }
 
@@ -522,9 +661,9 @@
 
       @include sp {
         display: block;
-        width: 100%;
-        min-height: auto;
-        padding: s(18) 0;
+        width: s(335);
+        min-height: s(88);
+        padding: 0;
       }
 
       >dt {
@@ -540,12 +679,11 @@
         letter-spacing: 0.06em;
 
         @include sp {
-          display: block;
-          width: 100%;
-          min-height: auto;
-          padding: 0;
-          font-size: s(11);
-          line-height: 1.7;
+          align-items: flex-start;
+          width: s(335);
+          min-height: s(42);
+          padding: s(16) s(10) 0;
+          font-size: s(12);
         }
       }
 
@@ -563,12 +701,11 @@
         font-style: normal;
 
         @include sp {
-          width: 100%;
-          min-height: auto;
-          margin-top: s(8);
-          padding: 0;
-          font-size: s(11);
-          line-height: 1.7;
+          width: s(335);
+          min-height: s(46);
+          margin-top: 0;
+          padding: s(6) s(10) s(16);
+          font-size: s(12);
           letter-spacing: 0.04em;
         }
       }
@@ -595,8 +732,7 @@
         letter-spacing: 0.06em;
 
         @include sp {
-          font-size: s(11);
-          line-height: 1.7;
+          font-size: s(12);
         }
       }
 
@@ -614,8 +750,7 @@
         font-style: normal;
 
         @include sp {
-          font-size: s(11);
-          line-height: 1.7;
+          font-size: s(12);
           letter-spacing: 0.04em;
         }
       }
@@ -624,21 +759,21 @@
 
   /* ==================================================
     Offices
-    - Googleマップ付き事業所カード
-    - 背景画像
   ================================================== */
   .offices {
     position: relative;
     overflow: hidden;
-    min-height: pmin(1172);
-    padding: pmin(103) 0 pmin(130);
-    background: url("../img/offices-bgimg.png") no-repeat right top / auto;
+    min-height: pmin(1320);
+    padding: pmin(160) 0 pmin(180);
+    background:
+      url("../img/offices-bgimg.png") no-repeat right top / auto 100%,
+      rgba(255, 255, 255, 1);
 
     @include sp {
-      min-height: auto;
-      padding: s(52) 0 s(58);
-      background-position: right top;
-      background-size: auto 100%;
+      margin-top: 0;
+      min-height: s(1357);
+      padding: s(80) 0 s(120);
+      background: rgba(255, 255, 255, 1);
     }
 
     &::before {
@@ -648,79 +783,107 @@
     .section-inner {
       position: relative;
       z-index: 1;
-      width: min(100% - pmin(40), pmin(1000));
+      width: min(calc(100% - pmin(80)), pmin(1000));
       margin: 0 auto;
 
       @include sp {
-        width: min(100% - s(40), s(350));
+        width: s(335);
       }
     }
 
     .section-title {
+      display: flex;
+      flex-direction: column;
+      gap: pmin(30);
+      width: pmin(270);
+      height: pmin(106);
       margin: 0;
       padding: 0;
       background: transparent;
 
+      @include sp {
+        gap: s(16);
+        width: s(141);
+        height: s(57);
+      }
+
       &-en {
         display: block;
+        width: pmin(75);
+        height: pmin(16);
         color: rgba(188, 41, 41, 1);
         font-size: pmin(16);
         font-weight: 700;
         line-height: 1;
         letter-spacing: 0.06em;
+        white-space: nowrap;
 
         @include sp {
+          width: s(45);
+          height: s(10);
           font-size: s(10);
         }
       }
 
       &-jp {
         display: block;
-        margin-top: pmin(23);
+        width: pmin(270);
+        height: pmin(60);
+        margin-top: 0;
         color: rgba(34, 34, 34, 1);
         font-size: pmin(50);
         font-weight: 700;
         line-height: 1;
         letter-spacing: 0.1em;
+        white-space: nowrap;
 
         @include sp {
-          margin-top: s(12);
-          font-size: s(28);
-          letter-spacing: 0.06em;
+          width: s(141);
+          height: s(31);
+          font-size: s(26);
         }
       }
     }
 
     .office-list {
       display: grid;
-      gap: pmin(40);
-      margin-top: pmin(60);
+      gap: pmin(60);
+      width: pmin(1000);
+      margin-top: pmin(80);
 
       @include sp {
-        gap: s(38);
-        margin-top: s(34);
+        gap: s(40);
+        width: s(335);
+        margin-top: s(40);
       }
     }
 
     .office-card {
       display: grid;
-      grid-template-columns: pmin(500) pmin(420);
-      column-gap: pmin(40);
+      grid-template-columns: pmin(510) pmin(440);
+      column-gap: pmin(50);
       align-items: start;
+      width: pmin(1000);
+      min-height: pmin(367);
 
       @include sp {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        gap: s(30);
+        width: s(335);
+        min-height: s(510);
       }
 
       &__map {
-        width: pmin(500);
-        height: pmin(260);
+        width: pmin(510);
+        height: pmin(367);
         overflow: hidden;
 
         @include sp {
-          width: 100%;
-          height: s(210);
-          margin-top: s(20);
+          order: 2;
+          width: s(335);
+          height: s(241);
+          margin-top: 0;
         }
 
         iframe {
@@ -732,16 +895,27 @@
       }
 
       &__content {
-        padding-top: pmin(8);
+        display: grid;
+        gap: pmin(20);
+        width: pmin(440);
+        min-height: pmin(295);
+        padding-top: 0;
 
         @include sp {
-          padding-top: 0;
+          order: 1;
+          gap: s(16);
+          width: s(335);
+          min-height: s(239);
         }
       }
 
       &__name {
+        display: flex;
+        align-items: center;
+        width: pmin(440);
+        min-height: pmin(61);
         margin: 0;
-        padding-bottom: pmin(18);
+        padding: pmin(10);
         border-bottom: 1px solid rgba(182, 182, 182, 1);
         color: rgba(34, 34, 34, 1);
         font-size: pmin(24);
@@ -750,15 +924,14 @@
         letter-spacing: 0.06em;
 
         @include sp {
-          padding-bottom: s(10);
-          font-size: s(15);
-          line-height: 1.7;
+          width: s(335);
+          min-height: auto;
+          padding: s(10) 0;
+          font-size: s(24);
         }
       }
 
-      &__address,
-      &__tel,
-      &__fax {
+      &__address {
         margin: 0;
         color: rgba(34, 34, 34, 1);
         font-size: pmin(18);
@@ -768,47 +941,50 @@
         font-style: normal;
 
         @include sp {
-          font-size: s(12);
-          line-height: 1.7;
-          letter-spacing: 0.04em;
+          width: s(335);
+          font-size: s(14);
         }
-      }
-
-      &__address {
-        margin-top: pmin(22);
-
-        @include sp {
-          margin-top: s(14);
-        }
-      }
-
-      &__tel {
-        margin-top: pmin(8);
-
-        @include sp {
-          margin-top: s(10);
-        }
-      }
-
-      &__fax {
-        margin-top: pmin(2);
       }
 
       &__tel,
       &__fax {
-        span {
-          display: inline-block;
-          margin-right: pmin(10);
-          color: rgba(188, 41, 41, 1);
-          font-size: pmin(18);
-          font-weight: 700;
-          line-height: 1.7;
-          letter-spacing: 0.06em;
+        display: flex;
+        align-items: center;
+        width: pmin(440);
+        height: pmin(28);
+        margin: 0;
+        color: rgba(34, 34, 34, 1);
+        font-size: pmin(18);
+        font-weight: 500;
+        line-height: 1;
+        letter-spacing: 0.06em;
+        font-style: normal;
+        white-space: nowrap;
 
-          @include sp {
-            margin-right: s(8);
-            font-size: s(12);
-          }
+        @include sp {
+          width: s(335);
+          height: s(24);
+          font-size: s(14);
+        }
+      }
+
+      &__tel span,
+      &__fax span {
+        display: inline-block;
+        flex-shrink: 0;
+        width: pmin(39);
+        margin-right: pmin(10);
+        color: rgba(188, 41, 41, 1);
+        font-size: pmin(18);
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 0.06em;
+        white-space: nowrap;
+
+        @include sp {
+          width: s(34);
+          margin-right: s(10);
+          font-size: s(14);
         }
       }
 
@@ -816,9 +992,9 @@
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        width: pmin(220);
-        height: pmin(44);
-        margin-top: pmin(24);
+        width: pmin(300);
+        height: pmin(60);
+        margin-top: 0;
         background: rgba(188, 41, 41, 1);
         color: rgba(255, 255, 255, 1);
         font-size: pmin(16);
@@ -830,10 +1006,9 @@
         transition: opacity 0.3s;
 
         @include sp {
-          width: 100%;
-          height: s(43);
-          margin-top: s(18);
-          font-size: s(12);
+          width: s(335);
+          height: s(60);
+          font-size: s(16);
         }
 
         &:hover {

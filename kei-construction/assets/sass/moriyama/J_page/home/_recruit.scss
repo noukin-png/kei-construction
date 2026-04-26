@@ -1,113 +1,106 @@
 @use '../../../functions' as *;
 @use '../../J_functions' as *;
 
-@use '../../../functions' as *;
-@use '../../J_functions' as *;
-
 /* -----------------------
   recruit
 ----------------------- */
 .recruit {
-  /* --------------------------------
-    ページ全体
-  -------------------------------- */
   background: #f4f4f4;
 
-  /* 共通：各セクションの横幅 */
-  .section-inner {
-    width: min(100% - pmin(40), pmin(1017));
-    margin: 0 auto;
-
-    @include sp {
-      width: min(100% - s(40), s(350));
-    }
-  }
-
-  /* 共通：セクション見出し */
+  /* --------------------------------
+    共通：セクション見出し
+  -------------------------------- */
   .section-title {
+    display: flex;
+    flex-direction: column;
+    gap: pmin(30);
     margin: 0;
     padding: 0;
     background: transparent;
 
     &__en,
     &__jp {
+      display: block;
       background: transparent;
+      white-space: nowrap;
     }
 
     &__en {
-      display: block;
       color: rgba(188, 41, 41, 1);
       font-size: pmin(16);
       font-weight: 700;
       line-height: 1;
       letter-spacing: 0.06em;
-
-      @include sp {
-        font-size: s(10);
-      }
     }
 
     &__jp {
-      display: block;
-      margin-top: pmin(23);
       color: rgba(34, 34, 34, 1);
       font-size: pmin(50);
       font-weight: 700;
       line-height: 1;
       letter-spacing: 0.1em;
+    }
 
-      @include sp {
-        margin-top: s(12);
-        font-size: s(28);
-        letter-spacing: 0.06em;
+    @include sp {
+      gap: s(16);
+
+      &__en {
+        font-size: s(10);
+      }
+
+      &__jp {
+        font-size: s(26);
+        letter-spacing: 0.1em;
       }
     }
   }
 
   /* ==================================================
     Recruit Hero
-    - ページタイトル
-    - メイン画像
-    - リード文
   ================================================== */
   .recruit-hero {
     position: relative;
-    padding-top: pmin(163);
+    padding-top: pmin(194);
     background:
-      url("../img/about-hero-bgimg.png") no-repeat right top / auto,
+      url("../img/about-hero-bgimg.png") no-repeat right top / min(83.93vw, pmin(1269)) auto,
       #f4f4f4;
 
     @include sp {
-      padding-top: s(48);
+      padding-top: s(80);
       background:
-        url("../img/about-hero-bgimg.png") no-repeat right s(18) / auto s(180),
+        url("../img/recruit-hero-sp.png") no-repeat center top / 100% s(260),
         #f4f4f4;
     }
 
     &__inner {
       position: relative;
       z-index: 1;
-      width: min(100% - pmin(40), pmin(1464));
+      width: 100%;
       margin: 0 auto;
-      padding-bottom: pmin(108);
+      padding-bottom: pmin(60);
 
       @include sp {
-        width: min(100% - s(40), s(350));
-        padding-bottom: s(46);
+        width: 100%;
+        padding-bottom: s(70);
       }
     }
 
-    /* ページタイトル */
     .page-title {
       display: flex;
-      align-items: baseline;
+      align-items: center;
       gap: pmin(30);
-      margin-left: pmin(75);
+      width: pmin(519);
+      height: pmin(110);
+      margin-left: pmin(80);
 
       @include sp {
-        justify-content: center;
-        gap: s(10);
-        margin-left: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: s(4);
+        width: s(173);
+        height: s(83);
+        margin: 0 auto;
       }
 
       &__en {
@@ -118,81 +111,116 @@
         font-style: normal;
         line-height: pmin(110);
         letter-spacing: 0.06em;
+        white-space: nowrap;
 
         @include sp {
-          font-size: s(52);
-          line-height: s(57);
+          width: s(173);
+          height: s(60);
+          color: rgba(123, 123, 123, 1);
+          font-size: s(60);
+          line-height: 1;
+          letter-spacing: 0.06em;
+          text-align: center;
         }
       }
 
       &__jp {
-        padding-bottom: 0;
+        display: flex;
+        align-items: center;
+        width: pmin(111);
+        height: pmin(29);
+        padding-left: pmin(7);
         color: rgba(34, 34, 34, 1);
         font-size: pmin(20);
         font-weight: 700;
         line-height: 1.4;
+        white-space: nowrap;
 
         @include sp {
-          font-size: s(12);
-          line-height: 1.4;
+          display: block;
+          width: s(173);
+          height: s(19);
+          padding-left: 0;
+          color: rgba(34, 34, 34, 1);
+          font-size: s(16);
+          font-weight: 500;
+          line-height: 1;
+          letter-spacing: 0.06em;
+          text-align: center;
         }
       }
     }
 
-    /* メイン画像 */
     &__image {
-      margin-top: pmin(34);
+      width: min(calc(100% - pmin(80)), pmin(1432));
+      height: pmin(468);
+      margin: pmin(50) auto 0;
 
       @include sp {
-        width: s(255);
-        margin: s(19) auto 0;
+        width: s(335);
+        height: s(180);
+        margin: s(40) auto 0;
       }
 
       img {
         display: block;
         width: 100%;
-        height: auto;
+        height: 100%;
+        object-fit: cover;
+
+        @include sp {
+          content: url("../img/recruit-top-sp.png");
+        }
       }
     }
 
-    /* リード文 */
     &__message {
-      margin-top: pmin(72);
+      width: min(calc(100% - pmin(80)), pmin(1083));
+      margin: pmin(120) auto 0;
       color: rgba(34, 34, 34, 1);
-      font-size: pmin(16);
+      font-size: pmin(20);
       font-weight: 500;
-      line-height: 2.2;
+      line-height: 2.4;
       letter-spacing: 0.06em;
       text-align: center;
+      white-space: normal;
 
       @include sp {
-        margin-top: s(30);
-        font-size: s(11);
-        line-height: 2.1;
-        letter-spacing: 0.04em;
+        width: s(335);
+        height: auto;
+        margin: s(60) auto 0;
+        color: rgba(34, 34, 34, 1);
+        font-size: s(14);
+        font-weight: 500;
+        line-height: 2;
+        letter-spacing: 0.06em;
         text-align: left;
+        white-space: normal;
+
+        br {
+          display: none;
+        }
       }
     }
   }
 
   /* ==================================================
     About Us
-    - ケイ建設について
-    - 背景画像つき説明文
   ================================================== */
   .about-us {
     position: relative;
     overflow: hidden;
-    padding: pmin(106) 0 pmin(112);
-    background: url("../img/about-us-bgimg.png") no-repeat center top / 100% auto;
+    min-height: pmin(578);
+    padding: pmin(120) 0;
+    background: url("../img/about-us-bgimg.png") no-repeat center top / cover;
 
     @include sp {
-      padding: s(50) 0 s(54);
+      min-height: s(607);
+      padding: s(120) 0 s(80);
       background-position: center top;
-      background-size: auto s(420);
+      background-size: cover;
     }
 
-    /* 背景画像の上に薄い白レイヤー */
     &::before {
       content: "";
       position: absolute;
@@ -205,45 +233,83 @@
     .section-inner {
       position: relative;
       z-index: 1;
+      width: min(calc(100% - pmin(80)), pmin(1000));
+      margin: 0 auto;
+
+      @include sp {
+        width: s(335);
+      }
     }
 
     .section-title {
+      width: pmin(433);
+      height: pmin(106);
+
+      @include sp {
+        gap: s(16);
+        width: s(225);
+        height: s(57);
+      }
+
       &__en {
-        color: rgba(188, 41, 41, 1);
+        width: pmin(95);
+        height: pmin(16);
+
+        @include sp {
+          width: s(63);
+          height: s(10);
+          font-size: s(10);
+          line-height: 1;
+          letter-spacing: 0.06em;
+        }
       }
 
       &__jp {
-        color: rgba(34, 34, 34, 1);
+        width: pmin(433);
+        height: pmin(60);
+
+        @include sp {
+          width: s(225);
+          height: s(31);
+          font-size: s(26);
+          line-height: 1;
+          letter-spacing: 0.1em;
+        }
       }
     }
 
-    /* 本文 */
     &__text {
-      margin-top: pmin(35);
-      max-width: pmin(868);
+      width: min(100%, pmin(1000));
+      margin-top: pmin(60);
 
       @include sp {
-        margin-top: s(23);
-        max-width: 100%;
+        width: s(335);
+        margin-top: s(40);
       }
 
       p {
         color: rgba(34, 34, 34, 1);
-        font-size: pmin(16);
+        font-size: pmin(18);
         font-weight: 500;
         line-height: 2.4;
         letter-spacing: 0.06em;
-
-        /* PCではbrの位置だけで改行 */
-        white-space: nowrap;
+        white-space: normal;
 
         @include sp {
-          font-size: s(11);
-          line-height: 2.1;
-          letter-spacing: 0.04em;
-
-          /* SPでは画面幅が狭いので自然に折り返す */
+          color: rgba(34, 34, 34, 1);
+          font-size: s(14);
+          font-weight: 500;
+          line-height: 2.2;
+          letter-spacing: 0.06em;
           white-space: normal;
+        }
+      }
+
+      br {
+        display: inline;
+
+        @include sp {
+          display: none;
         }
       }
     }
@@ -251,33 +317,30 @@
 
   /* ==================================================
     Work Introduction
-    - どんな仕事？
-    - 説明文
-    - 4つの管理カード
   ================================================== */
   .work-introduction {
     position: relative;
     overflow: hidden;
-    padding: pmin(92) 0 pmin(103);
+    min-height: pmin(1430);
+    padding: pmin(140) 0;
     color: #fff;
     background: url("../img/what-kind-of-works-bgimg.png") no-repeat center center / cover;
 
     @include sp {
-      padding: s(42) 0 s(44);
+      min-height: s(1500);
+      padding: s(80) 0 s(80);
       background-position: center center;
     }
 
-    /* 暗いフィルター */
     &::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.55);
+      background: rgba(46, 46, 46, 0.85);
       pointer-events: none;
       z-index: 0;
     }
 
-    /* 赤〜オレンジの斜めカバー */
     &::after {
       content: "";
       position: absolute;
@@ -290,165 +353,292 @@
       z-index: 1;
 
       @include sp {
-        right: s(-120);
-        width: s(330);
+        content: none;
       }
     }
 
     .section-inner {
       position: relative;
       z-index: 2;
-
-      width: min(100% - pmin(40), pmin(1017));
+      width: min(calc(100% - pmin(80)), pmin(1000));
       margin: 0 auto;
 
       @include sp {
-        width: min(100% - s(40), s(350));
+        width: s(335);
       }
     }
 
     .section-title {
-      &__en {
+      width: pmin(325);
+      height: pmin(106);
+
+      @include sp {
+        gap: s(16);
+        width: s(169);
+        height: s(57);
+      }
+
+      &__en,
+      &__jp {
         color: #fff;
       }
 
-      &__jp {
-        margin-top: pmin(18);
-        color: #fff;
-        font-size: pmin(50);
-        line-height: 1;
-        letter-spacing: 0.1em;
+      &__en {
+        width: pmin(184);
+        height: pmin(16);
 
         @include sp {
-          margin-top: s(12);
-          font-size: s(28);
+          width: s(119);
+          height: s(10);
+          font-size: s(10);
+          line-height: 1;
           letter-spacing: 0.06em;
+        }
+      }
+
+      &__jp {
+        width: pmin(325);
+        height: pmin(60);
+
+        @include sp {
+          width: s(169);
+          height: s(31);
+          font-size: s(26);
+          line-height: 1;
+          letter-spacing: 0.1em;
         }
       }
     }
 
-    /* 導入文 */
     &__lead {
-      margin-top: pmin(44);
-      max-width: pmin(725);
+      display: grid;
+      gap: pmin(30);
+      width: min(100%, pmin(1000));
+      margin-top: pmin(60);
 
       @include sp {
-        margin-top: s(24);
+        display: grid;
+        gap: s(20);
+        width: s(335);
+        margin-top: s(51);
       }
 
       p {
         color: #fff;
-        font-size: pmin(16);
+        font-size: pmin(18);
         font-weight: 500;
         line-height: 2.4;
         letter-spacing: 0.06em;
 
         @include sp {
-          font-size: s(11);
-          line-height: 2.1;
-          letter-spacing: 0.04em;
+          width: s(335);
+          color: #fff;
+          font-size: s(14);
+          font-weight: 500;
+          line-height: 2;
+          letter-spacing: 0.06em;
+          white-space: normal;
         }
+      }
 
-        &+p {
-          margin-top: pmin(16);
-
-          @include sp {
-            margin-top: s(12);
-          }
+      br {
+        @include sp {
+          display: none;
         }
       }
     }
 
-    /* 強調行 */
     &__highlight {
+      display: flex;
+      align-items: center;
+      gap: pmin(10);
+
+      @include sp {
+        display: grid;
+        gap: s(20);
+        width: s(335);
+      }
+
       span {
-        display: inline-block;
-        padding: pmin(6) pmin(13) pmin(5);
-        background: linear-gradient(90deg, #f07a33 0%, #e74c3c 100%);
+        display: inline-flex;
+        align-items: center;
+        min-height: pmin(46);
+        padding: pmin(10) pmin(20) pmin(12);
+        background: linear-gradient(180deg, #e87c38 0%, #bc2929 100%);
         color: #fff;
-        font-size: pmin(22);
+        font-size: pmin(18);
         font-weight: 700;
         line-height: 1.4;
         letter-spacing: 0.06em;
 
         @include sp {
-          padding: s(5) s(10) s(4);
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: s(222);
+          min-height: s(40);
+          padding: s(10) s(12) s(12);
+          background: linear-gradient(180deg, #e87c38 0%, #bc2929 100%);
+          color: #fff;
           font-size: s(14);
+          font-weight: 700;
+          line-height: 1;
+          letter-spacing: 0.06em;
+        }
+      }
+
+      em {
+        display: inline-block;
+        color: #fff;
+        font-size: pmin(18);
+        font-weight: 500;
+        font-style: normal;
+        line-height: 2.4;
+        letter-spacing: 0.06em;
+
+        @include sp {
+          display: block;
+          width: s(259);
+          margin-top: 0;
+          color: #fff;
+          font-size: s(14);
+          font-weight: 500;
+          font-style: normal;
+          line-height: 2;
+          letter-spacing: 0.06em;
         }
       }
     }
 
-    /* 4つの管理カード */
     .work-management-list {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: pmin(22) pmin(23);
-      max-width: pmin(1022);
-      margin-top: pmin(52);
+      grid-template-columns: repeat(2, pmin(485));
+      gap: pmin(30);
+      width: pmin(1000);
+      margin-top: pmin(60);
 
       @include sp {
+        display: grid;
         grid-template-columns: 1fr;
-        gap: s(12);
-        margin-top: s(28);
+        gap: s(20);
+        width: s(335);
+        margin-top: s(40);
       }
     }
 
     .work-management-card {
-      min-height: pmin(204);
-      padding: pmin(25) pmin(26) pmin(24);
-      background: rgba(255, 255, 255, 0.92);
+      display: block;
+      width: pmin(485);
+      min-height: pmin(250);
+      padding: pmin(30);
+      background: rgba(255, 255, 255, 0.8);
       color: rgba(34, 34, 34, 1);
 
       @include sp {
-        min-height: auto;
-        padding: s(16) s(14) s(15);
+        display: block;
+        width: s(335);
+        min-height: s(176.9);
+        padding: s(20);
+        background: rgba(255, 255, 255, 0.8);
+      }
+
+      &:nth-child(3) {
+        @include sp {
+          min-height: s(200.9);
+        }
       }
 
       &__title {
-        color: #f0642c;
-        font-size: pmin(31);
+        display: flex;
+        align-items: center;
+        gap: pmin(10);
+        width: 100%;
+        min-height: pmin(48);
+        color: rgba(188, 41, 41, 1);
+        font-size: pmin(30);
         font-weight: 700;
-        line-height: 1.4;
+        line-height: 1.6;
         letter-spacing: 0.06em;
 
         @include sp {
-          font-size: s(18);
+          display: flex;
+          align-items: center;
+          gap: s(6.91);
+          width: s(295);
+          min-height: s(32);
+          color: rgba(188, 41, 41, 1);
+          font-size: s(20);
+          font-weight: 700;
+          line-height: 1.6;
+          letter-spacing: 0.06em;
         }
 
         span {
-          margin-right: pmin(8);
+          @include Bebas;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          min-width: pmin(41);
+          padding-top: pmin(4);
+          color: transparent;
+          background: linear-gradient(180deg, #e87c38 0%, #bc2929 100%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          font-size: pmin(50);
+          font-weight: 400;
+          line-height: 1;
+          letter-spacing: 0;
+          text-align: center;
 
           @include sp {
-            margin-right: s(6);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: s(23);
+            padding-top: 0;
+            font-size: s(26);
+            line-height: 0.9;
+            letter-spacing: 0.06em;
           }
         }
       }
 
       &__lead {
-        margin-top: pmin(8);
-        font-size: pmin(14);
+        margin-top: pmin(20);
+        color: rgba(34, 34, 34, 1);
+        font-size: pmin(18);
         font-weight: 700;
-        line-height: 1.9;
+        line-height: 1.7;
         letter-spacing: 0.06em;
 
         @include sp {
-          margin-top: s(6);
-          font-size: s(11);
-          line-height: 1.8;
+          width: s(295);
+          margin-top: s(8);
+          color: rgba(34, 34, 34, 1);
+          font-size: s(14);
+          font-weight: 700;
+          line-height: 1.7;
+          letter-spacing: 0.06em;
         }
       }
 
       &__text {
-        margin-top: pmin(8);
-        font-size: pmin(13);
+        margin-top: pmin(10);
+        color: rgba(34, 34, 34, 1);
+        font-size: pmin(16);
         font-weight: 500;
-        line-height: 1.92;
-        letter-spacing: 0.04em;
+        line-height: 1.7;
+        letter-spacing: 0.06em;
 
         @include sp {
-          margin-top: s(6);
-          font-size: s(10);
-          line-height: 1.9;
+          width: s(295);
+          margin-top: s(6.91);
+          color: rgba(34, 34, 34, 1);
+          font-size: s(13);
+          font-weight: 500;
+          line-height: 1.7;
+          letter-spacing: 0.06em;
         }
       }
     }
@@ -456,21 +646,17 @@
 
   /* ==================================================
     Recruitment Requirements
-    - 募集要項
-    - テーブル
-    - エントリーボタン
   ================================================== */
   .recruitment-requirements {
     position: relative;
     overflow: hidden;
-    padding: pmin(102) 0 pmin(123);
+    padding: pmin(160) 0 pmin(120);
     background: #f4f4f4;
 
     @include sp {
-      padding: s(54) 0 s(56);
+      padding: s(80) 0 s(80);
     }
 
-    /* 背景の斜めカバー */
     &::before {
       content: "";
       position: absolute;
@@ -483,38 +669,68 @@
       pointer-events: none;
 
       @include sp {
-        right: s(-220);
-        width: s(520);
+        content: none;
       }
     }
 
     .section-inner {
       position: relative;
       z-index: 1;
-      width: min(100% - pmin(40), pmin(1000));
+      width: min(calc(100% - pmin(80)), pmin(1000));
+      margin: 0 auto;
 
       @include sp {
-        width: min(100% - s(40), s(350));
+        width: s(335);
       }
     }
 
     .section-title {
+      width: pmin(249);
+      height: pmin(106);
+
+      @include sp {
+        gap: s(16);
+        width: s(159);
+        height: s(57);
+      }
+
       &__en {
-        color: rgba(188, 41, 41, 1);
+        width: pmin(249);
+        height: pmin(16);
+
+        @include sp {
+          width: s(159);
+          height: s(10);
+          font-size: s(10);
+          line-height: 1;
+          letter-spacing: 0.06em;
+        }
       }
 
       &__jp {
-        color: rgba(34, 34, 34, 1);
+        width: pmin(215);
+        height: pmin(60);
+
+        @include sp {
+          width: s(112);
+          height: s(31);
+          font-size: s(26);
+          line-height: 1;
+          letter-spacing: 0.1em;
+        }
       }
     }
 
-    /* 募集要項テーブル */
     .recruitment-table {
-      margin-top: pmin(59);
+      width: pmin(1000);
+      min-height: pmin(1107);
+      margin-top: pmin(80);
       border-top: none;
 
       @include sp {
-        margin-top: s(28);
+        width: s(335);
+        min-height: auto;
+        margin-top: s(40);
       }
 
       &__row {
@@ -526,9 +742,10 @@
 
         @include sp {
           display: block;
-          width: 100%;
-          min-height: auto;
-          padding: s(16) 0;
+          width: s(335);
+          min-height: s(88);
+          padding: 0;
+          border-bottom: 1px solid rgba(182, 182, 182, 1);
         }
 
         dt {
@@ -544,12 +761,16 @@
           letter-spacing: 0.06em;
 
           @include sp {
-            display: block;
-            width: 100%;
-            min-height: auto;
-            padding: 0;
-            font-size: s(11);
+            display: flex;
+            align-items: flex-start;
+            width: s(335);
+            min-height: s(42);
+            padding: s(16) s(10) 0;
+            color: rgba(96, 96, 96, 1);
+            font-size: s(15);
+            font-weight: 700;
             line-height: 1.7;
+            letter-spacing: 0.06em;
           }
         }
 
@@ -565,16 +786,19 @@
           letter-spacing: 0.06em;
 
           @include sp {
-            width: 100%;
-            min-height: auto;
-            margin-top: s(8);
-            padding: 0;
-            font-size: s(11);
+            display: block;
+            width: s(335);
+            min-height: s(46);
+            margin-top: 0;
+            padding: s(6) s(10) s(16);
+            color: rgba(34, 34, 34, 1);
+            font-size: s(14);
+            font-weight: 500;
             line-height: 1.7;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.06em;
           }
 
-          p+p {
+          p + p {
             margin-top: pmin(2);
 
             @include sp {
@@ -586,27 +810,45 @@
             color: rgba(188, 41, 41, 1);
             font-weight: 700;
           }
+
+          .recruitment-table__phone {
+            color: rgba(34, 34, 34, 1);
+            font-family: "Noto Sans JP", sans-serif;
+            font-size: pmin(16);
+            font-weight: 700;
+            font-style: normal;
+            line-height: 1.7;
+            letter-spacing: 0.06em;
+
+            @include sp {
+              color: rgba(34, 34, 34, 1);
+              font-size: s(14);
+              font-weight: 700;
+              line-height: 1.7;
+              letter-spacing: 0.06em;
+            }
+          }
         }
       }
     }
 
-    /* エントリーボタン */
     .entry-button {
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
-      width: pmin(350);
-      height: pmin(61);
-      margin: pmin(72) auto 0;
-      background: linear-gradient(90deg, #f07a33 0%, #d63b32 100%);
+      width: pmin(400);
+      height: pmin(80);
+      margin: pmin(0) auto 0;
+      background: linear-gradient(180deg, #e87c38 0%, #bc2929 100%);
       color: #fff;
       text-decoration: none;
       transition: opacity 0.3s;
 
       @include sp {
-        width: s(220);
-        height: s(48);
-        margin-top: s(34);
+        width: s(300);
+        height: s(60);
+        margin: s(40) auto 0;
       }
 
       &:hover {
@@ -614,27 +856,33 @@
       }
 
       span {
-        position: relative;
-        padding-right: pmin(22);
         color: #fff;
         font-size: pmin(24);
         font-weight: 700;
         line-height: 1;
         letter-spacing: 0.06em;
+        text-align: center;
 
         @include sp {
-          padding-right: s(18);
-          font-size: s(14);
+          font-size: s(18);
         }
+      }
 
-        &::after {
-          content: "›";
-          position: absolute;
-          top: 50%;
-          right: 0;
-          transform: translateY(-50%);
-          font-size: 1em;
-          line-height: 1;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: pmin(50);
+        transform: translateY(-50%);
+        display: block;
+        width: pmin(9);
+        height: pmin(14.82);
+        background: url("../img/arrow.svg") no-repeat center center / contain;
+
+        @include sp {
+          right: s(32);
+          width: s(7);
+          height: s(12);
         }
       }
     }
