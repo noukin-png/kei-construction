@@ -1,4 +1,5 @@
-// global
+@use '../functions' as *;
 
-@forward 'header';
-@forward 'footer';
+/* -----------------------
+  header
+----------------------- */
