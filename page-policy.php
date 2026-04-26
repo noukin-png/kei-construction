@@ -1,46 +1,129 @@
-// フォント
+<?php get_header(); ?>
+<body>
+  
+  <main class="policy">
+   
+    <section class="policy-hero">
+      
+      <div class="policy-bg"></div>
 
-// font-family: Noto Sans JP;
-@mixin sans {
-  font-family: "Noto Sans JP", sans-serif;
-  font-style: normal;
-  line-height: normal;
-}
-
-// font-family: Bebas Neue;
-//使う時は @include Bebas;
-@mixin Bebas {
-  font-family: "Bebas Neue", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-}
+      <div class="breadcrumb">
+        <a href="<?php echo home_url('/policy8'); ?>" class="breadcrumb-home">ホーム</a>
+        <span class="breadcrumb-separator">></span>
+        <span class="breadcrumb-current">個人情報保護法</span>
+      </div>
 
 
-// font-weight:;
-@mixin wt100 {
-  font-weight: 100;
-}
-@mixin wt200 {
-  font-weight: 200;
-}
-@mixin wt300 {
-  font-weight: 300;
-}
-@mixin wt400 {
-  font-weight: 400;
-}
-@mixin wt500 {
-  font-weight: 500;
-}
-@mixin wt600 {
-  font-weight: 600;
-}
-@mixin wt700 {
-  font-weight: 700;
-}
-@mixin wt800 {
-  font-weight: 800;
-}
-@mixin wt900 {
-  font-weight: 900;
-}
+      <div class="policy-hero-title">
+        <h1>PRIVACY POLICY</h1>
+        <p>個人情報保護法</p>
+      </div>
+
+      <div class="policy-photo">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/policy1.png" alt="事業内容" />
+      </div>
+    </section>
+
+    
+
+    <section class="policy-intro">
+      <div class="policy-intro-inner">
+        <div class="section-sub-title">
+          <p>/ Civil engineering</p>
+          <h2>個人情報保護方針</h2>
+        </div>
+
+        <div class="policy-intro-writing">
+          <p class="policy-intro-writing-p">
+            <span class="policy-intro-writing-p-span">株式会社ケイ建設 （以下「当社」という）</span>は、個<brclass="sp">人情報保護を企業の重要な社会的責務と認識し、<br class="sp">以下のとおり業務<br class="pc">上取り扱う個人に関する情報を適<br class="sp">切に取扱い保護に努めます。
+          </p>
+
+
+          <div class="policy-intro-container">
+            <div class="policy-intro-list">
+              <div class="policy-intro-item">
+                <p class="policy-intro-text">
+                  <span class="policy-intro-num">1.</span>
+                  当社は、個人情報保護に関する法令その他<br class="sp">の規範を遵守します。
+                </p>
+              </div>
+
+              <div class="policy-intro-item">
+                <p class="policy-intro-text">
+                  <span class="policy-intro-num">2.</span>
+                  当社は、個人情報の収集にあたっては、利<br class="sp">用目的を明確にしたうえで、<br class="pc">適法かつ公正な方<br class="sp">法により収集します。
+                </p>
+              </div>
+
+              <div class="policy-intro-item">
+                <p class="policy-intro-text">
+                  <span class="policy-intro-num">3.</span>
+                  当社は、収集した業務上の個人情報を、法<br class="sp">令に基づく帳簿の作成、法令に基づく届出・申<br class="sp">請書類の作成、<br class="pc">必要な書面の送付など、業務の<br class="sp">目的と運営に必要な範囲内で使用します。
+                </p>
+              </div>
+
+              <div class="policy-intro-item">
+                <p class="policy-intro-text">
+                  <span class="policy-intro-num">4.</span>
+                  当社は、収集した個人情報を次の場合を除い<br class="sp">て、第三者に対して提供、開示いたしません。
+                </p>
+                <ul class="policy-intro-sublist">
+                  <li>あらかじめご本人の同意を得た場合</li>
+                  <li>ご本人個人を識別することができない状態で<br class="sp">開示する場合</li>
+                  <li>
+                    利用目的達成に必要な範囲内で、円滑な業務<br class="sp">推進のために、当社の関係会社や外部業者に取<br class="sp">扱いを委託する場合
+                  </li>
+                  <li>法令等の規定に従い、提供、開示する場合</li>
+                </ul>
+              </div>
+
+
+
+
+              <div class="policy-intro-item">
+                <p class="policy-intro-text">
+                  <span class="policy-intro-num">5.</span>
+                  当社は、業務上の個人情報について、漏<br class="sp">洩・滅失・毀損・改ざん及び不正アクセスを防<br class="sp">止するため、<br class="pc">必要な処置を講じ安全対策に努め<br class="sp">ます。
+                </p>
+              </div>
+
+              <div class="policy-intro-item">
+                <p class="policy-intro-text">
+                  <span class="policy-intro-num">6.</span>
+                  当社は、ご本人の個人情報に対する開示、<br class="sp">訂正、削除等のご依頼については、<br class="pc">合理的な範<br class="sp">囲において適切に対応いたします。
+                </p>
+              </div>
+            </div>
+
+            <div class="policy-intro-contact">
+              <div class="policy-intro-form">
+                <a href="<?php echo home_url('/policy'); ?>">個人情報に関するお問合わせ</a>
+              </div>
+              <div class="policy-intro-form-text">
+                <h3>株式会社ケイ建設 総務部</h3>
+                <p>〒560-0056   大阪府豊中市宮山町2丁目9-2<br>TEL : 06-6151-4256 ／ FAX : 06-6151-4257</p>
+              </div>
+            </div>
+
+            <div class="policy-footer">
+              <p class="policy-footer-date">
+                <span class="label">制定日</span>
+                <span class="value">2026年5月1日</span>
+              </p>
+
+              <p class="policy-footer-ceo">
+                <span class="label">代表取締役社長</span>
+                <span class="value">小菟池 公孝</span>
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    </div>
+
+  </main>
+<?php get_footer(); ?>

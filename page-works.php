@@ -1,0 +1,141 @@
+<?php get_header(); ?>
+      <main class="works">
+        <div class="section-title">
+          <div class="text-box">
+            <img class="sec-title-img pc" src="<?php echo get_template_directory_uri(); ?>/assets/img/title.png" alt="" />
+            <img
+              class="sec-title-img sp"
+              src="<?php echo get_template_directory_uri(); ?>/assets/img/title-sp.png"
+              alt=""
+            />
+            <div class="title-text">
+              <h1>WORKS</h1>
+              <p>実績紹介</p>
+            </div>
+          </div>
+          <img class="sec-mv-img pc" src="<?php echo get_template_directory_uri(); ?>/assets/img/works-pc.png" alt="" />
+          <img class="sec-mv-img sp" src="<?php echo get_template_directory_uri(); ?>/assets/img/works-sp.png" alt="" />
+        </div>
+
+        <div class="works-coment">
+          <p>地域の暮らしを支えてきた、私たちの実績をご紹介します。</p>
+        </div>
+
+        <div class="works-contents">
+          <div class="works-item-1 works-content-item">
+            <div class="works-item-text">
+              <a href="<?php echo home_url('/works-1'); ?>" target="_blank">
+                <p><span>2025年 ／ 兵庫県西宮市</span></p>
+                <p>樋ノ口町雨水貯留施設整備工事</p>
+              </a>
+            </div>
+
+            <div class="works-swiper-area">
+              <div class="works-swiper-btn-prev">＜</div>
+              <div class="swiper works-swiper">
+                <div class="works-swiper-wrapper swiper-wrapper">
+                  <div class="works-swiper-slide swiper-slide">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/works-item1.png" alt="画像1" />
+                  </div>
+                  <div class="works-swiper-slide swiper-slide">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/works-item2.png" alt="画像2" />
+                  </div>
+                  <div class="works-swiper-slide swiper-slide">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/works-item3.png" alt="画像3" />
+                  </div>
+                </div>
+
+                <div class="works-pagination swiper-pagination"></div>
+              </div>
+
+              <div class="works-swiper-btn-next">＞</div>
+            </div>
+
+            <div class="works-explanation">
+              <p>
+                兵庫県西宮市の樋ノ口町雨水貯留施設（下水道施設）の整備工事を実施しました。
+              </p>
+            </div>
+          </div>
+
+          <div class="works-item-2 works-content-item">
+            <div class="works-item-text">
+              <a href="<?php echo home_url('/works-2'); ?>" target="_blank">
+                <p><span>2025年 ／ 大阪府豊能町</span></p>
+                <p>牧地区ほ場整備（7-3）工事</p>
+              </a>
+            </div>
+
+            <div class="works-swiper-area">
+              <div class="works-swiper-btn-prev">＜</div>
+              <div class="swiper works-swiper">
+                <div class="works-swiper-wrapper swiper-wrapper">
+                  <div class="works-swiper-slide swiper-slide">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/works-item4.png" alt="画像1" />
+                  </div>
+                  <div class="works-swiper-slide swiper-slide">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/works-item5.png" alt="画像2" />
+                  </div>
+                  <div class="works-swiper-slide swiper-slide">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/works-item6.png" alt="画像3" />
+                  </div>
+                  <div class="works-swiper-slide swiper-slide">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/works-item7.png" alt="画像3" />
+                  </div>
+                </div>
+
+                <div class="works-pagination swiper-pagination"></div>
+              </div>
+
+              <div class="works-swiper-btn-next">＞</div>
+            </div>
+
+            <div class="works-explanation">
+              <p>農地　大阪府北部農と緑の総合事務所補完工</p>
+            </div>
+          </div>
+
+          <div class="works-item-3 works-content-item">
+            <div class="works-item-text">
+              <a href="<?php echo home_url('/works-3'); ?>" target="_blank">
+                <p><span>2023年 ／ 大阪府豊能町</span></p>
+                <p>一級河川 余野川 護岸補修工事</p>
+              </a>
+            </div>
+
+            <div class="works-swiper-area">
+              <div class="works-swiper-btn-prev">＜</div>
+              <div class="swiper works-swiper">
+                <div class="works-swiper-wrapper swiper-wrapper">
+                  <div class="works-swiper-slide swiper-slide">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/works-item8.png" alt="画像1" />
+                  </div>
+                  <div class="works-swiper-slide swiper-slide">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/works-item9.png" alt="画像2" />
+                  </div>
+                  <div class="works-swiper-slide swiper-slide">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/works-item10.png" alt="画像3" />
+                  </div>
+                  <div class="works-swiper-slide swiper-slide">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/works-item11.png" alt="画像3" />
+                  </div>
+                  <div class="works-swiper-slide swiper-slide">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/works-item12.png" alt="画像3" />
+                  </div>
+                </div>
+
+                <div class="works-pagination swiper-pagination"></div>
+              </div>
+
+              <div class="works-swiper-btn-next">＞</div>
+            </div>
+
+            <div class="works-explanation">
+              <p>一級河川 余野川 護岸補修工事（R5 金石橋下流左岸）</p>
+
+              <p>大阪府池田土木事務所　法覆護岸工</p>
+            </div>
+          </div>
+        </div>
+      </main>
+      <?php get_footer(); ?>
